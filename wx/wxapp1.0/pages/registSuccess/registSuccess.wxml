@@ -1,9 +1,0 @@
-<!--registSuccess.wxml-->
-<view class="wrap">
-  <icon class="successIcon" type="success" size="80"/>
-  <view class="successText">{{successText}}</view>
-  <view class="tipText">您已成功注册《老师懂你》账号</view>
-  <view class="goToIndex">
-     <navigator url="../login/login" open-type="redirect"><button type="primary">前往登录</button></navigator>
-  </view>
-</view>

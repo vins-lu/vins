@@ -1,9 +1,0 @@
-$(document).ready(function(){
-    $(".next").click(function(){
-        history.pushState({title:"das"},"",location.href);
-        console.log(history.state);
-    });
-    $(window).on("popstate",function(){
-        console.log(history.state);
-    })
-})
