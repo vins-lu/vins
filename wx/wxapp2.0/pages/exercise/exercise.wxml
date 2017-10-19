@@ -1,0 +1,30 @@
+<!--pages/exercise/exercise.wxml-->
+<view class='container'>
+  <view class='exercise' wx:if='{{state == "exercise"}}'>
+    <view class='item' bindtap='startExercise'>
+      <view>
+        <image src='../../images/icon/math.jpg'></image>
+      </view>
+      <view class='detail'>
+        <view>今日练习</view>
+        <view>练习关于粗盐提纯的方法</view>
+      </view>
+    </view>
+  </view>
+  <view class='test' wx:if='{{state == "test"}}'>
+    <view class='item' bindtap='startTest'>
+      <view>
+        <image src='../../images/icon/math.jpg'></image>
+      </view>
+      <view class='detail'>
+        <view>周末测试</view>
+        <view>已经学习了一段时间了，我们今天要进行一下小测试，查看这段时间的学习成果。请为您的孩子准备纸和笔，安静的坐下后，点击开始测试。</view>
+      </view>
+    </view>
+  </view>
+  <view class='nodata' wx:if='{{state == "nodata"}}'>
+    <image src='../../images/icon/tip.png'></image>
+    <view>您还没有进行一次测评，我们无法给您提供针对性的服务，现在马上去测一下吧</view>
+    <view><navigator open-type='switchTab' url='../evaluation/evaluation'>去测评</navigator></view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/survey/survey.wxml-->
+<view class='container'>
+  <view class='title'>请先回答两个简单问题</view>
+  <view class='ques'>第一个问题：您孩子所在年级</view>
+  <view class='grades'>
+    <view catchtap='changeGrade' class='gradelist gradelist1 {{currentGrade == 8 ? "selected" : ""}}' data-grade="8">初一</view>
+    <view catchtap='changeGrade' class='gradelist gradelist2 {{currentGrade == 9 ? "selected" : ""}}' data-grade="9">初二</view>
+    <view catchtap='changeGrade' class='gradelist gradelist3 {{currentGrade == 10 ? "selected" : ""}}' data-grade="10">初三</view>
+  </view>
+  <view class=''>第二个问题：孩子的称呼</view>
+  <form class='nick' bindsubmit='formSubmit' report-submit='true'>
+    <view>
+      <input bindblur='setNickname' bindinput='' placeholder="小名或昵称"></input>
+    </view>
+    <view><button form-type='submit' class='complate' loading='{{loading}}'>完成</button></view>
+  </form>
+</view>

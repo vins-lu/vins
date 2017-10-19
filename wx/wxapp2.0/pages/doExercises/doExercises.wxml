@@ -1,0 +1,16 @@
+<!--pages/doExercises/doExercises.wxml-->
+<view class='container'>
+  <view class='head'>
+    <view class='problemNo'>第{{index + 1}}题/共{{total}}题</view>
+    <view class='time'><text>计时：</text>{{timing.minute}}分{{timing.second}}秒</view>
+  </view>
+  <view class='problem'>
+    <view>题目</view>
+    <view class='pro_text'>{{problem[index]}}</view>
+  </view>
+  <view class='handle'>
+    <view class='pre' wx:if='{{index != 0}}' catchtap='pre'>上一题</view>
+    <view class='next' wx:if='{{index != (total - 1)}}' catchtap='next'>下一题</view>
+    <view class='complate' wx:if='{{index == (total - 1)}}' catchtap='complate'>完成</view>
+  </view>
+</view>

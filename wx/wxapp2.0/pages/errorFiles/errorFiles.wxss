@@ -1,0 +1,30 @@
+/* pages/errorFiles/errorFiles.wxss */
+.examTitle{
+  width: 80%;
+  text-align: center;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+.error_text{
+  font-size: 28rpx;
+  border-left: 0.5em solid #00aa7b;
+  text-indent: 0.5em;
+  margin-bottom: 20rpx;
+}
+.examImages{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.errorImages{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.errorImages .error_img{
+  margin: 16rpx;
+}
+.errorImages image{
+  width: 320rpx;
+  height: 480rpx;
+}

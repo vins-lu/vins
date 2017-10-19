@@ -1,0 +1,28 @@
+<!--pages/doTests/doTests.wxml-->
+<view class='container'>
+  <view class='startPage' wx:if='{{startPageState}}'>
+    <view class='start_con'>
+      <view> 请准备一张纸，一支笔，安静的坐下进行测评，大约需要您20分钟的时间，请不要中断。</view>
+      <view class='begin btn' bindtap='beginTest'>开始</view>
+    </view>
+  </view>
+  <scroll-view class='testPage'>
+    <view class='head'>
+      <view class='problemNo'>第{{index + 1}}题/共{{total}}题</view>
+      <view class='time'><text>计时：</text>{{timing.minute}}分{{timing.second}}秒</view>
+    </view>
+    <view class='problem'>
+      <view>题目</view>
+      <scroll-view class='pro_text'>{{problem[index]}}</scroll-view>
+      <view class='answer'>
+        <view class='selectOptions'>
+          <text class='btn' bindtap='next' data-value='A'>A</text>
+          <text class='btn' bindtap='next' data-value='B'>B</text>
+          <text class='btn' bindtap='next' data-value='C'>C</text>
+          <text class='btn' bindtap='next' data-value='D'>D</text>
+        </view>
+        <view class='noAnswer btn' bindtap='next' data-value='no'>我不会</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,65 @@
+<!--pages/plan/plan.wxml-->
+<view class='container'>
+  <view class='selectSub bg6'>
+    <view class='sublist {{currentSub == "math" ? "selected" : ""}}' bindtap='changeSub' data-type='math'>
+      <image src='../../images/icon/math.jpg'></image>
+      <text>数学</text>
+    </view>
+    <view class='sublist {{currentSub == "physic" ? "selected" : ""}}' bindtap='changeSub' data-type='physic'>
+      <image src='../../images/icon/physic.jpg'></image>
+      <text>物理</text>
+    </view>
+    <view class='sublist {{currentSub == "chemistry" ? "selected" : ""}}' bindtap='changeSub' data-type='chemistry'>
+      <image src='../../images/icon/chemistry.jpg'></image>
+      <text>化学</text>
+    </view>
+  </view>
+  <view class='diary'>
+    <view class='showType'>
+      <text class='{{showType == "day" ? "selected" : ""}}' bindtap='changeShowType' data-type='day'>每日</text>
+      <text class='{{showType == "week" ? "selected" : ""}}' bindtap='changeShowType' data-type='week'>每星期</text>
+      <text class='{{showType == "month" ? "selected" : ""}}' bindtap='changeShowType' data-type='month'>每月</text>
+    </view>
+    <scroll-view class='detail' scroll-x="true" bindscrolltoupper="scrollToLeft" bindtouchstart='moveS' bindtouchmove='showPreMonth' scroll-left="{{diaryScrollL}}">
+      <view class='day_show' wx:if='{{showType == "day"}}'>
+        <view class='preMonth' bindtap='showPreMonth'>
+          <view><image src='../../images/icon/pullRight.png'></image></view>
+          <view>上一个月</view>
+        </view>
+        <view class='item' wx:for="{{10}}" wx:key="*this">
+          <text class='item_text'>1分</text>
+          <view style='height:16%'></view>
+          <text class='item_date'>9.1</text>
+        </view>
+      </view>
+      <view class='week_show' wx:if='{{showType == "week"}}'>
+        <view class='preMonth' bindtap='showPreMonth'>
+          <view><image src='../../images/icon/pullRight.png'></image></view>
+          <view>上一个月</view>
+        </view>
+        <view class='item' wx:for="{{10}}" wx:key="*this">
+          <text class='item_text'>1分</text>
+          <view style='height:16%'></view>
+          <text class='item_date'>9.1</text>
+        </view>
+      </view>
+      <view class='month_show' wx:if='{{showType == "month"}}'>
+        <view class='preMonth' bindtap='showPreMonth'>
+          <view><image src='../../images/icon/pullRight.png'></image></view>
+          <view>上一个月</view>
+        </view>
+        <view class='item' wx:for="{{10}}" wx:key="*this">
+          <text class='item_text'>1分</text>
+          <view style='height:16%'></view>
+          <text class='item_date'>9.1</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='explain'>
+    <view>您9.10旷课一天，共2000名学生掌握了新的知识。中考中可以提高约3分。</view>
+  </view>
+  <view class='motto'>
+    <view>全市共有1万名学生与您一起按时练习，只有坚持才能进步！</view>
+  </view>
+</view>
