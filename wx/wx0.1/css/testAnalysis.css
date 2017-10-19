@@ -1,0 +1,267 @@
+body {
+	font-size: 0.24rem;
+}
+nav {
+	font-size: 0.3rem;
+}
+
+nav ul {
+	overflow: hidden;
+	width: 100%;
+	border-bottom: 1px solid #999;
+	position: relative;
+}
+
+nav li {
+	color: #696969;
+	width: 50%;
+	text-align: center;
+	line-height: 1rem;
+}
+
+nav li.liActive {
+	background: #29B6F6;
+	color: #fff;
+}
+
+#listOne {
+	/*display:none;*/
+}
+
+#graph {
+	border-bottom: 1px solid #DEDEDE;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 0.2rem;
+	margin-bottom: 0.12rem;
+	font-size: 0.3rem;
+}
+
+#graph>ul {
+	width: 40%;
+	box-sizing: border-box;
+	padding-left: 0.3rem;
+}
+
+#graph>p {
+	color: #A5A5A5;
+	width: 60%;
+	text-align: center;
+	line-height: 0.2rem;
+	position: absolute;
+	bottom: 0.2rem;
+	right: 0rem;
+}
+
+#graph>span {
+	position: absolute;
+	right: 0rem;
+	text-align: center;
+	line-height: 0.8rem;
+	display: block;
+	z-index: 10;
+	font-size: 0.6rem;
+	color: #8A8787;
+}
+
+#graph li {
+	overflow: hidden;
+	margin-top: 0.1rem;
+	line-height: 0.6rem;
+	color: #A5A5A5;
+}
+
+#graph li>div {
+	width: 0.26rem;
+	height: 0.55rem;
+}
+
+#graph li>p {
+	border-bottom: 1px solid #bbb;
+	margin-left: 0.27rem;
+	width: 80%;
+}
+
+#graph li>p>span {
+	margin-left: 0.14rem;
+	color: #000;
+	font-weight: 400;
+}
+
+#graph #circlechart {
+	float: right;
+}
+
+#score {
+	width: 98%;
+	margin: auto;
+	border-bottom: 1px solid #DEDEDE;
+	position: relative;
+	border: 1px solid #F7F7F7;
+	color: #7A7A7A;
+}
+
+#scoreMap {
+	width: 100%;
+	height: 5rem;
+}
+
+#score>p {
+	text-align: center;
+	position: absolute;
+	top: 0.2rem;
+	left: 0rem;
+	right: 0rem;
+	color: #646464;
+	font-size: 0.3rem;
+}
+
+#score>div>p {
+	float: left;
+	text-align: center;
+	position: relative;
+	bottom: 0.6rem;
+	font-size: 0.2rem;
+}
+
+#score>div>p>span {
+	display: inline-block;
+	width: 0.2rem;
+	height: 0.2rem;
+	margin-right: 0.1rem;
+}
+
+#colP {
+	position: absolute;
+	bottom: -0.6rem;
+}
+
+#high,
+#lowes,
+#analy {
+	margin: 0.2rem 0rem;
+	border-top: 1px solid #bbb;
+}
+
+#high>li,
+#lowes>li,
+#analy>li {
+	height: 0.7rem;
+	font-size: 0.25rem;
+	overflow: hidden;
+	border-bottom: 1px solid #CDCDCD;
+}
+
+#high>p,
+#lowes>p,
+#analy>p {
+	font-size: 0.3rem;
+	line-height: 0.77rem;
+	text-align: center;
+}
+
+#high>li>span,
+#lowes>li>span,
+#analy>li>span {
+	display: inline-block;
+	float: left;
+	width: 25%;
+	text-align: center;
+	line-height: 0.6rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+/* 
+.liFirst {
+	color: #B6B8B6;
+} */
+
+#listTwo {
+	display: none;
+}
+
+#listTwo .name {
+	color: #C1C2C1;
+}
+
+#listTwo li {
+	overflow: hidden;
+	line-height: 0.7rem;
+	border-bottom: 1px solid #999;
+}
+
+#listTwo li:first-child {
+	overflow: hidden;
+	background: #29B6F6;
+	color: #fff;
+}
+
+#listTwo li>p {
+	float: left;
+	text-align: center;
+}
+
+#listTwo li>p>img {
+	position: relative;
+	top: 0.1rem;
+	margin-left: 0.1rem;
+}
+
+#listTwo li>p:nth-child(1) {
+	width: 30%;
+}
+
+#listTwo li>p:nth-child(2) {
+	width: 20%;
+}
+
+#listTwo li>p:nth-child(3) {
+	width: 10%;
+}
+
+#listTwo li>p:nth-child(4) {
+	width: 20%;
+}
+
+#listTwo li>p:nth-child(5) {
+	width: 20%;
+}
+
+.selectExam,.selectUpload{
+	font-size: 16px;
+	text-align: center;
+	line-height: 2;
+	background: #ddd;
+}
+.selectExam .selectedExamName,.selectUpload .selectedUploadName{
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding:0 2em;
+}
+
+
+/*tab导航*/
+.tab{
+	position: relative;
+	height: 3em;
+	line-height: 3em;
+	font-size: 18px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+}
+.examSingle,.examCompare{
+	float: left;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 50%;
+}
+.tab .selected{
+	background: #EAEAEA;
+}
+
+#compare_chart,#score_section{
+	margin: 1em 0;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>获取手机验证码</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<link rel="stylesheet" type="text/css" href="css/composing.css"/>
+		<link rel="stylesheet" type="text/css" href="css/getmsgcode.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/composing.js"></script>
+		<script src="js/global.js"></script>
+		<script src="js/getmsgcode.js"></script>
+	</head>
+	<body>
+		<div class="form">
+			<div class="field">
+				<span class="labelText">手机号：</span>
+				<input type="number" placeholder="请输入11位手机号" id="mobile" />
+			</div>
+			<div class="field">
+				<span class="labelText">验证码：</span>
+				<input type="text" placeholder="请输入验证码" id="code" />
+				<span id='getCode'>获取验证码</span>
+			</div>		
+			<div class="next">
+				<div class="btn primary nextBtn">下一步</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+/* pages/welcome/welcome.wxss */
+.tryit navigator{
+  margin-top: 100rpx;
+  padding: 0 100rpx;
+  background: #F7C566;
+  color: #fff;
+  line-height: 3;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,59 @@
+/* pages/survey/result.wxss */
+.shsee{
+  width: 80%;
+  margin-bottom: 50rpx;
+}
+.arrayDay{
+  position: relative;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.arrayDay .markText{
+  position: relative;
+  top: 3px;
+  left: 0;
+  text-align: center;
+  transform: translateX(-50%);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.arrayDay .markText .arrowTop{
+  width: 0;
+  height: 0;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 25rpx solid #ccc;  
+}
+.promise{
+  width: 80%;
+}
+.promise_title{
+  text-align: center;
+  font-size: 32rpx;
+  color: #3f51b5;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.promise_text{
+  text-indent: 2em;
+  margin-bottom: 20rpx;
+  line-height: 1.5;
+}
+.promise_text view{
+  margin-bottom: 20rpx;
+}
+.promise_aim{
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 2;
+}
+.complate{
+  margin-top: 50rpx;
+  font-size: 24rpx;
+  line-height: 3;
+  color: #fff;
+  background: #009688;
+  border-radius: 5rpx;
+  padding: 0 50rpx;
+}

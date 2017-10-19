@@ -1,0 +1,252 @@
+body{
+	background-color: #f5f5f5;
+	font-size: 0.28rem;
+	padding-bottom: 1.6rem;
+}
+.examInfo{
+	text-align: center;
+	color: #fff;
+	padding-top: 0.5rem;
+	padding-bottom: 0.9rem;
+	background:url("../img/bg1.jpg") center center no-repeat;
+	background-size: cover;
+}
+.examInfo .className{
+	font-size: 0.42rem;
+}
+.examInfo .examReportInfo{
+	display: flex;
+	margin-top: 0.9rem;
+	justify-content: center;
+}
+.examInfo .avarage,.examInfo .joinNum,.examInfo .passRate{
+	width: 2.4rem;
+	border-right: 1px solid #fff;
+	box-sizing: border-box;
+	line-height: 1;
+}
+.examInfo .labelText{
+	margin-bottom: 0.2rem;
+}
+.examInfo .passRate{
+	border-right: 1px solid transparent;
+}
+.examInfo .avarageText,.examInfo .joinNumText,.examInfo .passRateText{
+	margin-top: 0.2rem;
+	font-size: 0.58rem;
+}
+.reportPanel{
+	margin-top: 0.05rem;
+	padding: 0 0.2rem;
+}
+.scoreDistribution,.questionAnalysis,.knowledgeAnalysis,.studentRank{
+	margin-top: 0.2rem;
+	padding-top: 0.3rem;
+}
+
+.chartTitle{
+	position: relative;
+	color: #333;
+	font-size: 0.34rem;
+	text-indent: 0.25rem;
+	font-weight: normal;
+	line-height: 1;
+	padding-bottom: 0.08rem;
+	margin-bottom: 0.1rem;
+	border-bottom: 1px solid #eeeeee;
+}
+.chartTitle:after{
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 0.05rem;
+	height: 1em;
+	background-color: #01bf86;
+}
+.rangeItem{
+	margin-top: 0.2rem;
+	padding-bottom: 0.3rem;
+}
+.range_con{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.24rem;
+}
+.examRank,.examPaper{
+	padding: 0 0.3rem;
+	margin-top: 0.3rem;
+}
+
+.itemType{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	color: #666;
+	margin-top: 0.2rem;
+}
+.typeText{
+	display: inline-block;
+	width: 1.6rem;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	color: #fff;
+	background: #f00;
+	border-top-left-radius: 0.1rem;
+	border-bottom-left-radius: 0.1rem;
+}
+.totalScore{
+	flex-basis: 5em;
+}
+.getScore{flex-basis: 6em;}
+.tabBar,.backReport{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #fff;
+	text-align: center;
+	border-top: 1px solid #f5f5f5;
+	background-color: #01bf86;
+	overflow: hidden;
+}
+.tabBar span{
+	display: inline-block;
+	float: left;
+	width: 2.5rem;
+	border-left: 1px solid #34cc9e;
+	box-sizing: border-box;
+}
+.tabBar span:last-child{
+	border-left: 1px solid transparent;
+}
+
+
+/* 学生排名 */
+.studentRank .labelText{
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.32rem;
+}
+.studentRank .stuRank_list{
+	display: flex;
+	justify-content: space-between;
+	color: #999;
+	font-size: 0.28rem;
+	margin: 0.2rem 0;
+}
+.studentRank .stu_name{
+	width: 40%;
+}
+.studentRank .stu_score{
+	width: 30%;
+	text-align: center;
+}
+.studentRank .stu_rank{
+	width: 30%;
+	text-align: right;
+	text-indent: 1em;
+	box-sizing: border-box;
+}
+.stuRank_list .stu_rank{
+	padding-right: 1em;
+}
+
+.scoreDistribution .rangeItem:nth-child(5n+1) .progress_inner{
+	background: #fd5668;
+}
+.scoreDistribution .rangeItem:nth-child(5n+2) .progress_inner{
+	background: #40adf5;
+}
+.scoreDistribution .rangeItem:nth-child(5n+3) .progress_inner{
+	background: #faaa62;
+}
+.scoreDistribution .rangeItem:nth-child(5n+4) .progress_inner{
+	background: #4fd2c3;
+}
+.scoreDistribution .rangeItem:nth-child(5n+5) .progress_inner{
+	background: #be89e8;
+}
+
+.itemType{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	color: #666;
+	margin-top: 0.2rem;
+}
+.typeText{
+	display: inline-block;
+	width: 1.6rem;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	color: #fff;
+	background: #f00;
+	border-top-left-radius: 0.1rem;
+	border-bottom-left-radius: 0.1rem;
+}
+.questionAnalysis .sp_item:nth-child(5n+1) .typeText{
+	background: #fd5668;
+}
+.questionAnalysis .sp_item:nth-child(5n+2) .typeText{
+	background: #40adf5;
+}
+.questionAnalysis .sp_item:nth-child(5n+3) .typeText{
+	background: #faaa62;
+}
+.questionAnalysis .sp_item:nth-child(5n+4) .typeText{
+	background: #4fd2c3;
+}
+.questionAnalysis .sp_item:nth-child(5n+5) .typeText{
+	background: #be89e8;
+}
+
+.sp_detail{
+	display: none;
+	margin-top:1em;
+	line-height: 2;
+}
+.sp_detail .sp_title,.sp_detail .sp_list,.kp_title,.kp_con .kp_list{
+	overflow: hidden;
+}
+.sp_detail .sp_title,.knowledgeAnalysis .kp_title{
+	color: #01bf86;
+	font-size: 0.32rem;
+}
+.sp_list,.kp_list{
+	color: #999;
+}
+
+.sp_detail span,.knowledgeAnalysis span{
+	display: inline-block;
+	float: left;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.knowledgeAnalysis{
+	line-height: 2;
+}
+.knowledgeAnalysis .kdName{
+	width: 40%;
+	text-align: left;
+}
+
+.sp_detail .sp_no{width: 20%;}
+.sp_detail .sp_ts{width: 20%;}
+.sp_detail .sp_gets{width: 30%;}
+.sp_detail .sp_loses{width: 30%;}
+
+.knowledgeAnalysis .errorNum{width: 40%;}
+.knowledgeAnalysis .appearNum{width: 20%;text-align: center;}
+.knowledgeAnalysis .scoresoc{width: 20%;text-align: center;}
+.knowledgeAnalysis .errorNum{width: 20%;text-align: right;}
+.kp_con .errorNum{padding-right: 1em;}

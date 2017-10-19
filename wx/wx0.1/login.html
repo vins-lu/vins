@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link rel="stylesheet" type="text/css" href="css/composing.css" />
+		<script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/composing.js"></script>
+		<script src="js/global.js"></script>
+		<!-- <script src="js/login.js"></script> -->
+	</head>
+	<body>
+		<img src="img/indexLogo.png" id="logo" />
+		<div id="input">
+			<div>
+				<img class="icon" src="img/mobileNumber.png" />
+				<input type="text" placeholder="手机号/用户名" id='mobile' />
+			</div>
+			<div>
+				<img class="icon" src="img/password.png" />
+				<input type="password" placeholder="密码" id="pass" />
+			</div>
+			<div class="code hidden">
+				<img class="icon" src="img/imgcode.png" />
+				<input type="text" placeholder="验证码" id="code" />
+				<img id="codeImg">
+			</div>
+			<button id="submit">登录</button>
+			<!-- <a href="bind.html?openid=qweqwertyui&qq=dsa&b=zxc">短信验证登录</a> -->
+		</div>
+	</body>
+	<script>
+		$(document).ready(function() {
+			var errNum = localData.get("needauthcode") ? parseInt(localData.get("needauthcode")) : 0;
+			if(errNum >= 2) {
+				$(".code").removeClass("hidden");
+				refreshCaptcha();
+			}
+			$("#submit").click(function() {
+				var isOk = true;
+				var userName = $.trim($("#mobile").val());
+				var pwd = $.trim($("#pass").val());
+				var authcode = $.trim($("#code").val());
+
+				if(userName == ""){
+					$.showTip("请输入您的手机号码");
+					isOk = false;
+					return;
+				}
+				if(!testMobile(userName)){
+					$.showTip("请输入正确的手机号");
+					isOk = false;
+					return;
+				}
+				if(pwd == ""){
+					$.showTip("请输入密码");
+					isOk = false;
+					return;
+				}
+				if(!testPassWord(pwd)){
+					$.showTip("密码不正确");
+					isOk = false;
+					return;
+				}
+				if(errNum >= 2 && authcode == ""){
+					$.showTip("请输入验证码");
+					isOk = false;
+					return;
+				}
+				if(isOk){
+					var ajaxUrl = pageLoader.url + 'users.managerlogin';
+					var ajaxParam = {
+						mobile: userName,
+						pass: pwd,
+						code: authcode,
+					};
+					//请求加载状态
+					$.toast();
+					query('post', ajaxUrl, ajaxParam, function(jsonData) {
+						localData.remove("needauthcode");
+						localData.set("user", jsonData);
+						$.showTip("登录成功，您可以在公众号下方的考试功能中发起考试了！",function(){
+							WeixinJSBridge.call('closeWindow');
+						});
+					}, function(jsonData) {
+						if(jsonData.errcode == 1100 || jsonData.errcode == 1006) {
+							//是否需要输入验证码
+							errNum ++;
+							localData.set("needauthcode", errNum);
+							if(errNum >= 2) {
+								$(".code").removeClass("hidden");
+								refreshCaptcha();
+							}
+						}
+					});
+				}
+			});
+			//刷新验证码
+			function refreshCaptcha() {
+				var d = new Date();
+				var utc = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds(), d.getMilliseconds());
+				var random = Math.random();
+				var str = utc.toString() + random;
+				$("#codeImg").attr("src", pageLoader.codeurl + "__t" + str);
+			}
+			$("#codeImg").click(function(){
+				refreshCaptcha();
+			});
+		});
+	</script>
+</html>

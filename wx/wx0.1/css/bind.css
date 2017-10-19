@@ -1,0 +1,162 @@
+body {
+	overflow: hidden;
+	background: url("../img/loginbg.jpg") no-repeat;
+	overflow: hidden;
+	font-size: 14px;
+}
+
+header {
+	height: 1rem;
+	width: 100%;
+	background: #333333;
+	color: #fff;
+	font-size: 0.32rem;
+	position: relative;
+}
+
+header>ul>li:first-child {
+	text-align: center;
+	line-height: 1rem;
+}
+
+header>ul>li:last-child {
+	text-align: right;
+	position: absolute;
+	top: 0rem;
+	width: 100%;
+	line-height: 1rem;
+}
+#input>div>img.low{
+	width:0.26rem;
+	margin-left:0.06rem;
+}
+#input {
+	width: 5.7rem;
+	margin: auto;
+	margin-top: 1rem;
+}
+
+#input>div {
+	width: 100%;
+	height: 0.8rem;
+	border-bottom: 1px solid #fff;
+	margin-top: 0.1rem;
+	position: relative;
+}
+
+#input .selectGrade,
+#input #realname{
+	padding-left: 0;
+}
+
+#input>div>img,
+#input>div>input,
+#input #gradename,
+#input #realname{
+	float: left;
+}
+
+#input>div>img {
+	width: 0.36rem;
+	position: absolute;
+	bottom: 0.16rem;
+	z-index: 10;
+}
+
+#input>div>input,
+#input #gradename,
+#input #realname{
+	position: absolute;
+	left: 0rem;
+	top: 0.1rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	width: 100%;
+	border: none;
+	outline: none;
+	background: transparent;
+	padding-left: 0.6rem;
+	color: #fff;
+}
+#input #gradename,
+#input #realname{
+	color:#fff;
+}
+#input .right_arrow:after{
+	color: #fff;
+}
+
+#getCode {
+	font-size: 12px;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	line-height: 0.8rem;
+	bottom: 0rem;
+}
+#getCode:active{
+	color:#e4393c;
+}
+
+button.bind {
+	width: 5.7rem;
+	height: 0.88rem;
+	border: none;
+	outline: none;
+	background: #fff;
+	border-radius: 0.08rem;
+	color: #36BDB6;
+	margin-top: 1rem;
+}
+
+a {
+	display: block;
+	margin-top: 0.6rem;
+	text-align: center;
+	font-size: 0.32rem;
+	color: #fff;
+}
+::-webkit-input-placeholder {
+	color:#fff;
+}
+
+.schools{
+	position:fixed;
+	width:100%;
+	top:0px;
+	left:0px;
+	background: #fff;
+	display:block;
+}
+.schools>select{
+	display:block;
+	width:90%;
+	height:1rem;
+	line-height: 1rem;
+	margin:0px auto;
+	margin-top:0.6rem;
+	padding:0px 0.2rem;
+	border-radius: 0.1rem;
+}
+.schools>button{
+	display:block;
+	width:90%;
+	background: #00DB64;
+	font-size: 18px;
+	color:#fff;
+	margin:0px auto;
+	margin-top:0.4rem;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 0px 14px;
+	line-height: 2.3;
+}
+
+#input .footer{
+	overflow: hidden;
+	border-bottom: none;
+	margin-top: 1em;
+	color: #fff;
+}

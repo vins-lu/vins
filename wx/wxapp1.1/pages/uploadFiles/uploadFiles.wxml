@@ -1,0 +1,17 @@
+<!--pages/takePhoto/takePhoto.wxml-->
+<view class="container">
+  <view class="content">
+    <image catchtap="chooseImg" style="width: 200px; height: 200px;" src="../../images/icon/takephoto.png"></image>
+    <view class="label">
+      <view>老师懂你</view>
+      <view>您的贴身家教</view>
+    </view>
+    <view class="takePhoto" catchtap="chooseImg">试卷拍照</view>
+    <view class='tip'>
+      <view>1）请上传正规试卷，包括学校进行的单元测试试卷，期中、期未考试试卷。</view>
+      <view>2）请上传老师已阅过的试卷。</view>
+      <view>3）请将试卷平铺，完整，清晰的拍下来！</view>
+    </view>
+  </view>
+</view>
+

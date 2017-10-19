@@ -1,0 +1,59 @@
+/* pages/survey/survey.wxss */
+.title{
+  color: #000;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.ques{
+  font-size: 28rpx;
+  margin: 20rpx 0rpx;
+}
+.grades{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 80%;
+  height: 600rpx;
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+.grades .gradelist{
+  width: 150rpx;
+  color: #fff;
+  margin: 0 30rpx;
+  background: #9fa0a0;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.grades .gradelist.selected{
+  background: #259b24;
+}
+.gradelist1{
+  height: 200rpx;
+  line-height: 200rpx;
+}
+.gradelist2{
+  height: 400rpx;
+  line-height: 400rpx;
+}
+.gradelist3{
+  height: 600rpx;
+  line-height: 600rpx;
+}
+.nick{
+  font-size: 32rpx;
+  width: 80%;
+}
+.nick input{
+  margin-top: 50rpx;
+  font-size: 24rpx;
+  border-bottom: 1px solid #ccc;
+}
+.complate{
+  margin-top: 100rpx;
+  width: 80%;
+  line-height: 2;
+  color: #8bc34a;
+  border: 2rpx solid currentColor;
+  border-radius: 5rpx;
+}

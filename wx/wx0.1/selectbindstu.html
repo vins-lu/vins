@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="#607D8B" />
+		<title>选择绑定的学生</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/composing.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src='js/composing.js'></script>
+		<script src="js/global.js"></script>
+		<script src="js/selectbindstu.js"></script>
+		<style>
+			.selectArea{
+				margin-top: 20px;
+				padding: 5px 14px;
+			}
+			.selectArea div{
+				margin: 2em 0;
+				padding-bottom: 1em;
+				padding-left: 1em;
+				border-bottom: 1px solid #ccc;
+			}
+			.selectArea .labelText{
+				font-size: 0.4rem;
+				text-align: center;
+				margin: 0.2rem 0;
+			}
+			.nextStep{
+				padding: 5px 14px;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body >
+		<div class="selectArea">
+			<p class="labelText">请选择您的孩子</p>
+			<div class="selectedGrade right_arrow">请选择年级</div>
+			<div class="selectedClass right_arrow">您还没有选择年级</div>
+			<div class="selectedStudent right_arrow">您还没有选择班级</div>
+		</div>
+		<div class="nextStep">
+			<div class="btn primary nextBtn">下一步</div>
+		</div>
+	</body>
+</html>

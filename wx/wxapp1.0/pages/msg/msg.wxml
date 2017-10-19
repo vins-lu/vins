@@ -1,0 +1,17 @@
+<!--msg.wxml-->
+<view class="wrap">
+  <view class="empty" wx:if="{{msgList.length <= 0}}">
+    <image src="../../../images/noList.png"></image>
+    <view class="emptyText">暂时没有消息通知！</view>
+  </view>
+  <view class="" wx:if="{{msgList.length > 0}}">
+    <view class="list" wx:for="{{msgList}}" wx:key="*this">
+      <image src="../../../images/icon/msgType1.png"></image>
+      <view class="msgwrap">
+        <text class="msgType">通知</text>
+        <text class="msgText">{{msgType[item.optype]}}</text>
+      </view>
+      <text class="dateTime">{{item.create_time}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,130 @@
+* {
+	margin: 0rem;
+	padding: 0rem;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "微软雅黑";
+	background-color: #f8f8f8;
+	font-size: 12px;
+}
+.modal_open{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+@font-face {
+    font-family: handWrite;
+    src: url("scorettf.ttf");
+}
+input{
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	line-height: 1.5;
+	width: 100%;
+	-webkit-appearance:none;
+}
+::-webkit-input-placeholder {
+	color:#999;
+}
+:-moz-placeholder {
+	color:#999;
+}
+::-moz-placeholder {
+	color:#999;
+}
+:-ms-input-placeholder {
+	color:#999;
+}
+.hidden{display: none!important;}
+
+.lt {
+	float: left;
+}
+
+.rt {
+	float: right;
+}
+.pos_ab{
+	position: absolute;
+}
+.pos_re{
+	position: relative;
+}
+
+.clear {
+	clear: both;
+}
+
+.btn{
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 14px;
+	padding-right: 14px;
+	box-sizing: border-box;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
+	line-height: 2.55555556;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	overflow: hidden;
+}
+.primary{
+	color: #ffffff;
+	background-color: #1AAD19!important;
+	border-color: transparent;
+}
+.btn_disabled{
+	color: rgba(0, 0, 0, 0.3);
+	background-color: #F7F7F7;
+}
+/*触摸反馈样式*/
+.touchFeedback{position: relative;overflow:hidden;}
+.ripple{
+  position: absolute;
+  z-index: 2000;
+  width: 1vw !important;
+  height: 1vw !important;
+  border-radius: 100%;
+  overflow: hidden;
+  -webkit-animation:ripple .5s ease-in;
+  animation:ripple .5s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-transform: scale(1);
+     transform: scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    -webkit-transform: scale(10);
+     transform: scale(10);
+    opacity: 0;
+  }
+}
+ 
+@keyframes ripple {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    -webkit-transform: scale(10);
+    transform: scale(10);
+    opacity: 0;
+  }
+}

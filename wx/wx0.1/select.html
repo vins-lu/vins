@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择文件</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="css/select.css"/>
+		<link rel="stylesheet" type="text/css" href="css/composing.css"/>
+		<link rel="stylesheet" type="text/css" href="css/viewer.min.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/composing.js"></script>
+		<script src="js/global.js"></script>
+		<script src="js/select.js"></script>
+	</head>
+	<body>
+		<!--选择列表-->
+		<ul class="headerlist">
+			<li class="lt headerlistactive">试卷列表</li>
+			<li class="lt">答案列表</li>
+		</ul>
+		
+		<!--试卷列表-->
+		<ul class="subject docs-pictures clearfix"></ul>
+		<!--答案列表-->
+		<ul class="answer docs-pictures1 clearfix"></ul>
+		<!--选中的试卷-->
+		<ul class="activesubject docs-pictures2 clearfix"></ul>
+		<!--底部-->
+		<footer>
+			<p class="lt pre">预览</p>
+			<p class="lt">
+				<button>完成（<span class="num">0</span>）</button>
+			</p>
+		</footer>
+	</body>
+</html>
+
+<script src="js/viewer.min.js"></script>

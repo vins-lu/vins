@@ -1,0 +1,58 @@
+/*tab导航*/
+.tab{
+	position: relative;
+	height: 3em;
+	line-height: 3em;
+	font-size: 18px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+}
+.examSingle,.classCompare{
+	float: left;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 50%;
+}
+.tab .selected{
+	background: #EAEAEA;
+}
+
+.projectSelect{
+	display: flex;
+	flex-flow: row wrap;
+	margin-right: -1px;
+	height: 14em;
+	transition: height .5s;
+	overflow: hidden;
+}
+.projectSelect.showmore{
+	height: auto;
+}
+.projectSelect div {
+	width: 25%;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	height: 7em;
+	display: flex;
+	flex-flow: column nowrap;
+	text-align: center;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1em;
+	box-sizing: border-box;
+}
+.projectSelect img{
+	width: auto;
+	height: 3em;
+}
+.projectSelect span{
+	line-height: 2em;
+}
+.projectSelect div.selected{
+	background: rgba(255, 145, 5, 0.61);
+	color: #fff;
+}
+.packup{
+	order: 1;
+}

@@ -1,0 +1,104 @@
+<!--pages/evaluation/evaluation.wxml-->
+<view class="wrapper">
+<view class='personmessage'>
+  <view class="photo">
+    <view> <image class="personphoto" src="{{avatarUrl}}"></image></view>
+    <view class="nickName">{{nickName}}</view>
+  </view>
+  <view class="message">
+     <view class='messageline'><view>年级：{{level}}</view><view class='messageline'>城市：北京</view></view>
+     <!-- <view class='messageline'><view>您已坚持0天，陪伴是最好的提升学习成绩的方法</view></view> -->
+    <view class='messageline'>
+      <view class="noevaluate">您还未进行过评测，请尽快进行评测吧。已有5万名学生通过评测和坚持练习提高了分数。</view>
+    </view>
+  </view>
+</view>
+
+<!--数学-->
+<view class="subject mathematics">
+  <view class="subjecttitle">
+    <view class="subjecttitleleft">
+      <view class="subjectpic"><image  src="../../images/icon/math.jpg"></image></view>
+      <view class="subjectname">数学</view>
+    </view>
+    <form report-submit='true' bindsubmit='evaluate' class="evaluationbtn mathematicsbtn" data-subject="mathematics">
+      <view class="evaluationpic" catchtap='evaluate'><image  src="../../images/icon/test.png"></image></view>
+      <view><button form-type='submit'>立刻评测</button></view>
+    </form>
+  </view>
+  <!-- 估计分数 -->
+  <view class="subjectline">
+    <view>您还没有进行过评测，无法预估分数</view>
+    <view><progress percent="20" /></view>
+  </view>
+  <view class="subjectbrain">
+    <view class='eva_current_value'>
+      <view>基本概念:不熟练</view>
+      <view>熟练度:不熟练</view>
+      <view>横向思维:不好</view>
+      <view>上升空间:很高</view>
+      <view>勤奋:还需努力</view>
+    </view>
+  </view>
+  <view class="subjectcomment">小田同学错过了8次练习，其他同学在这8次练习中可提高10分。</view>
+</view>
+
+<!--物理-->
+<view class="subject physic"  wx:if='{{level == "初二" || level == "初三"}}'>
+  <view class="subjecttitle">
+    <view class="subjecttitleleft">
+      <view class="subjectpic"><image src="../../images/icon/physic.jpg"></image></view>
+      <view class="subjectname">物理</view>
+    </view>
+    <form report-submit='true' bindsubmit='evaluate' class="evaluationbtn physicbtn" data-subject="physice">
+      <view class="evaluationpic" catchtap='evaluate'><image src="../../images/icon/test.png"></image></view>
+      <view><button form-type='submit'>立刻评测</button></view>
+    </form>
+  </view>
+  <!-- 估计分数 -->
+  <view class="subjectline">
+    <view>您还没有进行过评测，无法预估分数</view>
+    <view><progress percent="20" /></view>
+  </view>
+  <view class="subjectbrain">
+    <view class='eva_current_value'>
+      <view>基本概念:不熟练</view>
+      <view>熟练度:不熟练</view>
+      <view>横向思维:不好</view>
+      <view>上升空间:很高</view>
+      <view>勤奋:还需努力</view>
+    </view>
+  </view>
+  <view class="subjectcomment">小田同学错过了8次练习，其他同学在这8次练习中可提高10分。</view>
+</view>
+
+<!--化学-->
+<view class="subject chemistry" wx:if='{{level == "初三"}}'>
+  <view class="subjecttitle">
+    <view class="subjecttitleleft">
+      <view class="subjectpic"><image src="../../images/icon/chemistry.jpg"></image></view>
+      <view class="subjectname">化学</view>
+    </view>
+    <form report-submit='true' bindsubmit='evaluate' class="evaluationbtn chemistrybtn" data-subject="chemistry">
+      <view class="evaluationpic" catchtap='evaluate'><image src="../../images/icon/test.png"></image></view>
+      <view><button form-type='submit'>立刻评测</button></view>
+    </form>
+  </view>
+  <!-- 估计分数 -->
+  <view class="subjectline">
+    <view>您还没有进行过评测，无法预估分数</view>
+    <view><progress percent="20" /></view>
+  </view>
+  <view class="subjectbrain">
+    <view class='eva_current_value'>
+      <view>基本概念:不熟练</view>
+      <view>熟练度:不熟练</view>
+      <view>横向思维:不好</view>
+      <view>上升空间:很高</view>
+      <view>勤奋:还需努力</view>
+    </view>
+  </view>
+  <view class="subjectcomment">小田同学错过了8次练习，其他同学在这8次练习中可提高10分。</view>
+</view>
+</view>
+

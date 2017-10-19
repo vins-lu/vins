@@ -1,0 +1,34 @@
+<!--login.wxml-->
+<view class="wrap">
+  <view class="form">
+    <text>国家/地区 中国</text>
+    <view class="form-item">
+        <text class="labelText">+86</text>
+        <input type="text" value="{{userNo}}"  placeholder="请输入用户名：" bindinput="checkUser"/>
+    </view>
+    <view class="form-item">
+        <text class="labelText">密码</text>
+        <input class="pass" type="password" value="{{pass}}"  placeholder="密码" bindinput="checkPass" />
+    </view>
+    <view class="form-item" wx:if="{{errcount >= 1}}">
+        <text class="labelText">验证码</text>
+        <input class="code" type="text" value="{{code}}"  placeholder="验证码" bindinput="checkcode" />
+        <image src="{{codeImg}}" catchtap="refreshCode"></image>
+    </view>
+    <view class="submit">
+      <button type="primary" catchtap="userLogin">登录</button>
+    </view>
+    <view class="other">
+      <text catchtap="codeLogin">通过短信验证码登录</text>
+      <view>
+        <text catchtap="regist" style="margin-right:20rpx;">注册</text>
+        <text catchtap="forgetPsw">忘记密码</text>
+      </view>
+    </view>
+    <view class="regist">
+      <navigator url="../upload/uploadImg">
+        <button type="default">上传</button>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,105 @@
+body{
+	background: #F0F0F2;
+	font-size: 0.32rem;
+}
+
+#selectClass .classCon{
+	padding: 2em 14px;
+	font-size: 12px;
+}
+
+#selectClass .sheetItem{
+	display: inline-block;
+	padding: 5px 12px;
+	margin: 5px;
+	border: 1px dotted #ccc;
+	color: #ccc;
+}
+
+#selectClass .sheetItem.exist{
+	border: 1px solid #333;
+	color: #333;
+}
+
+#selectClass .sheetItem.selected{
+	border-color: transparent;
+	background-color: #1AAD19;
+	color: #fff;
+}
+
+#selectClass .addClassBtn{
+	display: inline-block;
+	width: 6em;
+	padding: 5px 0;
+	margin: 5px;
+	margin-left: 20px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+#selectClass .confirmBtn{
+	margin-top: 10px;
+	background-color: #1AAD19;
+	border: none;
+	border-radius: 0;
+}
+
+.classRoomIpt{
+	border-bottom:1px solid #ccc;
+}
+
+
+button.sublim{
+	width:7rem;
+	height:0.9rem;
+	color:#fff;
+	font-size: 0.3rem;
+	border:none;
+	outline:none;
+	background: #09BA07;
+	margin:0px auto;
+	border-radius: 0.15rem;
+	position:absolute;
+	top:7.8rem;
+	left:0px;
+	right:0px;
+}
+.explain{
+	font-size: 0.28rem;
+	text-align: center;
+	margin-top:0.4rem;
+	/*color:#DED6D5;*/
+	color: #999;
+}
+.content{
+	width:100%;
+	background: #fff;
+	margin-top:0.34rem;
+}
+.content li{
+	width:100%;
+	border-bottom:1px solid #C5C5C5;
+	color: #333;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+.content .labelText{
+	display: inline-block;
+	min-width: 30%;
+}
+.examTitle{
+	padding: 1em 2em;
+}
+.examTitle input{
+	width: 60%;
+}
+.classRoom{
+	border: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.submit{
+	padding: 5px 14px;
+	margin-top: 20px;
+}

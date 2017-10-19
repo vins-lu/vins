@@ -1,0 +1,44 @@
+body{
+	background-color: #f5f5f5;
+	font-size: 0.28rem;
+	padding-bottom: 1.6rem;
+}
+.container{
+	overflow: hidden;
+}
+.analysis{
+	padding: 0.5rem 0.2rem;
+}
+.analysis .list{
+	margin-bottom: 0.3rem;
+}
+.analysis .title{
+	position: relative;
+	color: #333;
+	font-size: 0.34rem;
+	text-indent: 0.25rem;
+	font-weight: normal;
+	line-height: 1;
+	padding-bottom: 0.08rem;
+	margin-bottom: 0.3rem;
+	border-bottom: 1px solid #eeeeee;
+}
+.analysis .title:before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 0.05rem;
+	height: 1em;
+	background-color: #01bf86;
+}
+.analysis .text{
+	color: #666;
+	font-size: 0.32rem;
+	margin-bottom: 0.3rem;
+}
+
+.analysis .analyse{
+	color: #999;
+	font-size: 0.32rem;
+}

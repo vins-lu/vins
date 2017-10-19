@@ -1,0 +1,36 @@
+.selectArea{
+	padding: 5px 14px;
+}
+.selectArea div{
+	margin: 2em 0;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	border-bottom: 1px solid #ccc;
+}
+.selectArea .labelText{
+	font-size: 0.4rem;
+	text-align: center;
+	margin: 0.2rem 0;
+}
+.nextStep{
+	padding: 5px 14px;
+	margin-top: 20px;
+}
+.defaultSchool{
+	padding: 5px 14px;
+	margin-top: 50px;
+	text-align: center;
+	line-height: 2;
+}
+.defaultSchool .labelText{
+	font-size: 16px;
+	color: #999;
+}
+.defaultSchool .schoolName{
+	font-size: 20px;
+	color: #1AAD19;
+}
+.defaultSchool .schoolArea{
+	font-size: 12px;
+	color: #999;
+}

@@ -1,0 +1,67 @@
+body{
+	background: #F0F0F2;
+}
+.noneExam{
+	width:100%;
+	font-size: 0.4rem;
+}
+.examList>button,.examList1>button{
+	width:7rem;
+	height:0.9rem;
+	color:#fff;
+	font-size: 0.3rem;
+	border:none;
+	outline:none;
+	background: #09BA07;
+	margin:0px auto;
+	border-radius: 0.15rem;
+	position:fixed;
+	bottom:2.6rem;
+	left:0px;
+	right:0px;
+	z-index:1000;
+}
+.examList,.examList1{
+	margin-top:0.25rem;
+	font-size: 0.24rem;
+	margin-bottom:1.2rem;
+}
+.examList>li,.examList1>li{
+	height:1.55rem;
+	position:relative;
+	border-bottom:1px solid #D5D5D7;
+	background: #F6F6F7;
+}
+.examList>li:first-child,.examList1>li:first-child{
+	border-top:1px solid #D5D5D7;
+}
+.examList>li>img,.examList1>li>img{
+	height:1.28rem;
+	position:absolute;
+	top:0.13rem;
+	left:0.2rem;
+}
+.examList>li>p.examname,.examList1>li>p.examname{
+	font-size: 0.3rem;
+	position:absolute;
+	top:0.5rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	left:1.8rem;
+	color:#A09DA6;
+	width:3rem;
+}
+.examList>li>p.examgrade,.examList1>li>p.examgrade{
+	position:absolute;
+	top:0.88rem;
+	left:1.8rem;
+	color:#BAC4C6;
+}
+.examList>li>p.examdate,.examList1>li>p.examdate{
+	width:1.95rem;
+	position:absolute;
+	right:0.3rem;
+	top:0.56rem;
+	color:#A7A7AA;
+}

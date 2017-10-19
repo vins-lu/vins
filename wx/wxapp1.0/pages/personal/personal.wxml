@@ -1,0 +1,54 @@
+<!--personal.wxml-->
+<view class="wrap">
+  <view class="noLogin" wx:if="{{!isLogin}}">
+    <icon type="warn" size="80"/>
+    <view style="margin:20px 0px;">您还没有登录！</view>
+    <navigator url="../login/login"><button type="primary">登录</button></navigator>
+  </view>
+  <view class="islogin" wx:if="{{isLogin}}">
+    <view class="personinfo">
+      <view class="personImg">
+        <image src="{{userIcon != '' ? userIcon : '../../../images/icon/notLogin.png'}}"></image>
+      </view>
+      <view class="person">
+        <text>{{userinfo.realname}}</text>
+        <text style="margin-top:20rpx;color:#999;">手机号：{{userinfo.mobile}}</text>
+      </view>
+      <!--<view class="detail">
+        <text class="icon icon-ios-arrow-right"></text>
+      </view>-->
+    </view>
+    <view class="itemWrap">
+      <view class="item" catchtap="toggleSchool">
+          <image src="../../../images/icon/school.png"></image>
+          <text style="flex-grow:1;">学校</text>
+          <text>{{currentSchool.schoolname}}</text>
+      </view>
+      <view class="item">
+          <image src="../../../images/icon/duty.png"></image>
+          <text style="flex-grow:1;">职务</text>
+          <text>{{duty[userinfo.usertype]}}</text>
+      </view>
+      <view class="item">
+        <navigator url="../otherLogin/otherLogin?action=resetpass">
+          <image src="../../../images/icon/password.png"></image>
+          <text>重设密码</text>
+        </navigator>
+      </view>
+    </view>
+    <!--<view class="itemWrap">
+      <picker bindchange="selectTheme" value="{{themeIndex}}" range="{{themes}}">
+        <view class="item">
+            <image src="../../../images/icon/theme.png"></image>
+            <text style="flex-grow:1;">主题</text>
+            <view class="{{'themePreview ' + 'bg' + themeIndex}}" ></view>
+        </view>
+      </picker>
+    </view>-->
+    <view class="itemWrap">
+      <view class="list" catchtap="exit">
+        <text>退出</text>
+      </view>
+    </view>
+  </view>
+</view>

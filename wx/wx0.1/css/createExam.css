@@ -1,0 +1,65 @@
+html{font-size: 12px;}
+body{
+	position: absolute;
+	width: 100%;
+	background: #F0F0F2;
+	min-height: 100%;
+	padding-bottom: 70px;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+.examWrap,.modal{
+	font-size: 12px;
+	background-color: #fff;
+}
+.examlist{
+	display: flex;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 14px;
+}
+.projectImg{
+	display: inline-block;
+	width: 4em;
+	margin-right: 1em;
+}
+.projectImg img{
+	width: 100%;
+}
+.examInfo{
+	display: flex;
+	flex-flow: column nowrap;
+	align-self: center;
+	flex-grow: 1;
+}
+.examInfo span{
+	display: inline-block;
+}
+.exam_hd{
+	display: flex;
+	justify-content:space-between;
+	font-size: 14px;
+	color: #000;
+	line-height: 1.5;
+}
+.exam_bt{
+	display: flex;
+	justify-content:space-between;
+	font-size: 12px;
+	color: #999;
+	line-height: 2;
+}
+.examname,.examgrade{
+	flex-grow: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.examdate,.examstate{
+	width: 8em;
+	text-align: right;
+}
+.goback,.createExam{
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	padding: 0 14px;
+}

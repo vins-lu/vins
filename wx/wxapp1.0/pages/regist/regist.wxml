@@ -1,0 +1,28 @@
+<!--pages/regist/regist.wxml-->
+<view class="wrap">
+  <view class="form">
+    <text>国家/地区 <text>{{location}}</text></text>
+    <view class="form-item">
+        <text class="labelText">+86</text>
+        <input type="text" value="{{userNo}}"  placeholder="请输入手机号" bindinput="setUser" bindblur="checkUser"/>
+    </view>
+    <view class="form-item">
+        <text class="labelText">验证码</text>
+        <input type="text" value="{{inputSecurityCode}}"  placeholder="验证码" bindinput="checkSecurityCode" />
+        <button class="securityCode" style="background-color:transparent;" disabled="{{getCodeStatus}}" catchtap="getSecurityCode">{{getCodeText}}</button>
+    </view>
+    <view class="form-item">
+        <text class="labelText">孩子姓名</text>
+        <input type="text" value="{{childName}}"  placeholder="请输入孩子姓名" bindinput="setChildName"/>
+    </view>
+    <view class="submit">
+      <button type="primary" disabled="{{!nextState}}" catchtap="nextStep">下一步</button>
+    </view>
+  </view>
+  <view class="agreement">
+    <text>注册即表示您同意老师懂你</text>
+    <navigator url="../license/license">软件许可及服务协议</navigator>
+    <text>和</text>
+    <navigator url="../privacyPolicy/privacyPolicy">隐私政策</navigator>
+  </view>
+</view>

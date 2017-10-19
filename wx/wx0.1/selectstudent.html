@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="#607D8B" />
+		<title>选择学生</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/composing.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src='js/composing.js'></script>
+		<script src="js/global.js"></script>
+		<script src="js/echarts.js"></script>
+		<script src="js/selectstudent.js"></script>
+		<style>
+			.selectArea{
+				margin-top: 20px;
+				padding: 5px 14px;
+			}
+			.selectArea > div{
+				margin: 15px 0;
+			}
+			.selectArea .labelText{
+				font-size: 0.4rem;
+				text-align: center;
+				margin: 0.2rem 0;
+			}
+			.submit{
+				padding: 5px 14px;
+			}
+		</style>
+	</head>
+	<body >
+		<div class="selectArea">
+			<p class="labelText">请选择要查看的学生</p>
+			<div class="selectedClass right_arrow">你还没有班级</div>
+			<div class="selectedStudent right_arrow">该班级没有学生</div>
+			<div class="selectedExam right_arrow">该学生还没有一次考试</div>
+			<!-- <div class="selectedProject">数学</div> -->
+		</div>
+		<div class="submit">
+			<div class="submitBtn btn primary">查询</div>
+		</div>
+	</body>
+</html>

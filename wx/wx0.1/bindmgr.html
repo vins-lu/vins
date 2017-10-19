@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>绑定</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/bind.css" />
+		<link rel="stylesheet" type="text/css" href="css/composing.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+		<script src="js/composing.js"></script>
+		<script src="js/global.js"></script>
+		<script src="js/bindmgr.js"></script>
+	</head>
+	<body>
+		<div id="input">
+			<div>
+				<img src="img/name.png"/>
+				<input type="text" placeholder="请输入您的姓名" id="realname"/>
+			</div>
+			<div>
+				<img src="img/mobileNumber.png"class="low" />
+				<input type="text" placeholder="请输入手机号" id="mobile" />
+			</div>
+			<div>
+				<img src="img/password.png"class="low" />
+				<input type="password" placeholder="请输入密码" id="pw" />
+			</div>
+			<div>
+				<img src="img/password.png"class="low" />
+				<input type="password" placeholder="请再次输入密码" id="pw1" />
+			</div>
+			<div>
+				<img src="img/captcha.png" class="low"/>
+				<input type="text" placeholder="验证码" id="pass" />
+				<p id='getCode'>获取验证码</p>
+			</div>		
+			<button class="bind">绑定</button>
+			<!-- <div class="footer">
+				<span class="login rt">已有账号登录</span>
+			</div> -->
+		</div>
+	</body>
+</html>

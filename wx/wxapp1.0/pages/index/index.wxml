@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="wrap">
+  <view class="empty" wx:if="{{uploadList.rows.length <= 0}}">
+    <image src="../../../images/noList.png"></image>
+    <view class="noLiSt">您还没有一次考试记录呦！</view>
+  </view>
+  <view class="content" wx:if="{{uploadList.rows.length > 0}}">
+    <view class="list" wx:for="{{uploadList.rows}}" wx:key="*this">
+      <view class="subject">
+        <image src="{{'../../../images/icon/' + subjectList[item.classifyid].imgName + '.png'}}"></image>
+        <view class="subjectText">{{subjectList[item.classifyid].text}}</view>
+      </view>
+      <view class="exam">
+        <view class="examDateTime">{{item.create_time}}</view>
+        <view class="examName">{{item.title}}</view>
+        <view class="examStatus">
+          <text class="notComplate" wx-if="{{item.status != 'end'}}">{{uploadStatus[item.status]}}</text>
+          <button class="complate" wx-if="{{item.status == 'end'}}" data-uploadid="{{item.uploadid}}" catchtap="showReport">查看分析结果</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
