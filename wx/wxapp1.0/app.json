@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/upload/uploadImg",
+    "pages/regist/regist",
+    "pages/setPassword/setPassword",
+    "pages/complateInfo/complateInfo",
+    "pages/registSuccess/registSuccess",
+    "pages/license/license",
+    "pages/privacyPolicy/privacyPolicy",
+    "pages/otherLogin/otherLogin",
+    "pages/personal/personal",
+    "pages/msg/msg",
+    "pages/examReport/examReport"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "老师懂你",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#1afa29",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/index.png",
+        "selectedIconPath": "images/icon/indexSelected.png"
+      },
+      {
+        "pagePath": "pages/msg/msg",
+        "text": "消息",
+        "iconPath": "images/icon/msg.png",
+        "selectedIconPath": "images/icon/msgSelected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我",
+        "iconPath": "images/icon/person.png",
+        "selectedIconPath": "images/icon/personSelected.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+/* registSuccess.wxss */
+.wrap{text-align: center;padding: 10px;}
+.successIcon{margin-top: 30px;}
+.successText{font-size: 48rpx;color: #000;font-weight: bold;margin-top: 20px;}
+.tipText{margin-top: 20px;font-size: 30rpx;color: #999;}
+.goToIndex{margin-top: 15px;}
