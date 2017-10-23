@@ -91,10 +91,11 @@ if (!Date.prototype.format){
 				'%X': this.toLocaleTimeString(),//本地相应的时间表示
 			};
 			//格式化匹配
-			for (var k in regs)
+			for (var k in regs) {
 				if (new RegExp("(" + k + ")").test(fmt)) {
 					fmt = fmt.replace(RegExp.$1, regs[k]);
 				}
+			}
 			return fmt;
 		},
         configurable: true,
