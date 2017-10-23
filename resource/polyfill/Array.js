@@ -130,7 +130,6 @@ if (!Array.prototype.select) {
                 end = Math.min(Math.abs(arguments[1]), len);
             }
             end = end >= 0 ? end : len + end;
-            console.log(end)
             var step = arguments[2] || 1;
             step = Math.abs(step);
             if (arguments[2] < 0){
@@ -143,6 +142,47 @@ if (!Array.prototype.select) {
                 }
             }
             return arr;
+        },
+        configurable: true,
+        enumerable: false,
+        writable: true,
+    });
+}
+
+if (!String.prototype.select) {
+    Object.defineProperty(String.prototype, 'select', {
+        value: function(item) {
+            'use strict';
+            if (this == null) {
+                throw new TypeError('String.prototype.select called on null or undefined');
+            }
+            if (typeof this !== "string") {
+                throw new TypeError('This Object is not String');
+            }
+            var arr = [];
+            var i = arguments[0] || 0;
+            var len = this.length >>> 0;
+            var end = len;//结束位置
+            if (!arguments[1]) {
+                if (arguments[1] === 0){
+                    end = 0;
+                }
+            }else{
+                end = Math.min(Math.abs(arguments[1]), len);
+            }
+            end = end >= 0 ? end : len + end;
+            var step = arguments[2] || 1;
+            step = Math.abs(step);
+            if (arguments[2] < 0){
+                for (i = end - 1; i >= 0; i = i - step){
+                    arr.push(this[i]);
+                }
+            }else {
+                for (i; i < end; i = i + step){
+                    arr.push(this[i]);
+                }
+            }
+            return arr.join('');
         },
         configurable: true,
         enumerable: false,
