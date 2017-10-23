@@ -127,7 +127,7 @@ if (!Array.prototype.select) {
                     end = 0;
                 }
             }else{
-                end = arguments[1] % len;
+                end = Math.min(Math.abs(arguments[1]), len);
             }
             end = end >= 0 ? end : len + end;
             console.log(end)
