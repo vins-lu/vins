@@ -1,4 +1,9 @@
-//es6中常用的Number方法的polyfill
+/*
+    "name": "Number.extend",
+    "version": "1.0.0",
+    "description": "es6中常用的Number方法的polyfill",
+    "author": "vins <luyuchen627@gmail.com>",
+*/
 
 //Number.isFinite(只对数值有效)
 if (!Number.isFinite) {

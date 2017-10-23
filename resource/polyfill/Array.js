@@ -1,4 +1,9 @@
-//es6中常用的array方法的polyfill
+/*
+    "name": "Array.extend",
+    "version": "1.0.0",
+    "description": "es6中常用的array方法的polyfill",
+    "author": "vins <luyuchen627@gmail.com>",
+*/
 
 //Array.isArray
 if (!Array.isArray) {

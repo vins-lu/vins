@@ -1,6 +1,11 @@
-//es6中常用的Object方法的polyfill
+/*
+    "name": "object.extend",
+    "version": "1.0.0",
+    "description": "es6中常用的Object方法的polyfill",
+    "author": "vins <luyuchen627@gmail.com>",
+*/
 
-//object
+//object.is
 if (!Object.is) {
     Object.defineProperty(Object, 'is', {
         value: function(x, y) {
@@ -16,6 +21,7 @@ if (!Object.is) {
         writable: true
     });
 }
+//Object.assign
 if (!Object.assign) {
     Object.defineProperty(Object, "assign", {
         value: function(target, firstSource) {
