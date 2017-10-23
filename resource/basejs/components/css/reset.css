@@ -1,0 +1,17 @@
+/*样式重置*/
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0;}  /* 初始化标签在所有浏览器中的margin、padding值 */  
+fieldset,img {border:0 none;}  /* 重置fieldset（表单分组）、图片的边框为0*/  
+dl,ul,ol,menu,li {list-style:none;}   /* 重置类表前导符号为onne,menu在HTML5中有效 */  
+input,select,textarea,button {vertical-align:middle;border:none;outline:none;}  /* 重置表单控件垂直居中*/  
+button {border:0 none;background-color:transparent;cursor:pointer}  /* 重置表单button按钮效果 */  
+body,th,td,input,select,textarea,button {font-size:12px;line-height:1 ;font-family:"微软雅黑", "黑体","宋体";color:#666} /* 重置页面文字属性 */  
+a {color:#666;text-decoration:none}  /* 重置链接a标签 */  
+a:active, a:hover {text-decoration:none}   /* 重置链接a标签的鼠标滑动效果 */  
+table {width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}    /* 重置table属性 */  
+img{vertical-align:top}  /* 图片在当前行内的垂直位置 */  
+
+body {
+	font-size: 16px;
+	font-family: 'Microsoft YaHei', '\5FAE \8F6F \96C5\91';
+	color: #444;
+}
