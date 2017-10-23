@@ -127,7 +127,7 @@ if (!Array.prototype.select) {
                     end = 0;
                 }
             }else{
-                end = Math.min(Math.abs(arguments[1]), len);
+                end = Math.abs(arguments[1]) > len ? len : arguments[1];
             }
             end = end >= 0 ? end : len + end;
             var step = arguments[2] || 1;
@@ -168,7 +168,7 @@ if (!String.prototype.select) {
                     end = 0;
                 }
             }else{
-                end = Math.min(Math.abs(arguments[1]), len);
+                end = Math.abs(arguments[1]) > len ? len : arguments[1];
             }
             end = end >= 0 ? end : len + end;
             var step = arguments[2] || 1;
