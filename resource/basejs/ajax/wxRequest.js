@@ -8,7 +8,7 @@
 const wxRequest = (url, params) => {
   wx.request({
     url,
-    method: params.method || 'POST',
+    method: params.method && params.method.toLowerCase() || 'POST',
     data: params.data || {},
     header: {
       Accept: 'application/json',
