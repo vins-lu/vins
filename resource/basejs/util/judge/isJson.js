@@ -13,7 +13,7 @@ function parseJson(str) {
         var obj = JSON.parse(str);
         return obj;
       } else {
-        return false;
+        return obj;
       }
 
     } catch (e) {
@@ -21,7 +21,7 @@ function parseJson(str) {
       return false;
     }
   }
-  return false;
+  return obj;
 }
 
 export default {
