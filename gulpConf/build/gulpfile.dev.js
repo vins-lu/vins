@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
+var babel = require("gulp-babel");
 var autoprefixer = require('gulp-autoprefixer'); // 处理css中浏览器兼容的前缀  
 var rename = require('gulp-rename'); //重命名  
 var minifyCss = require('gulp-minify-css'); // css的层级压缩
@@ -57,6 +58,9 @@ function dev() {
             .pipe(changed(Config.js.dist))
             .pipe(debug({title:"js"}))
             .pipe(jshint())
+            .pipe(babel({
+                  presets: ['es2015']
+                }))
             .pipe(uglify())
             .pipe(rev())
             .pipe(gulp.dest(Config.js.dist))

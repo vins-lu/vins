@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
+var babel = require("gulp-babel");
 var autoprefixer = require('gulp-autoprefixer'); // 处理css中浏览器兼容的前缀  
 var minifyCss = require('gulp-minify-css'); // css的层级压缩
 var rev = require('gulp-rev');// 对文件名加MD5后缀
@@ -48,6 +49,9 @@ function prod() {
     gulp.task('revJs', function(){
         return gulp.src(Config.js.src)
             .pipe(jshint())
+            .pipe(babel({
+                  presets: ['es2015']
+                }))
             .pipe(uglify())
             .pipe(rev())
             .pipe(gulp.dest(Config.js.dist))
