@@ -13,7 +13,11 @@ function parseJson(str) {
         var obj = JSON.parse(str);
         return obj;
       } else {
+<<<<<<< HEAD
         return str;
+=======
+        return obj;
+>>>>>>> 9593684734b838cce50ebcdb4bd273f3e0eaed69
       }
 
     } catch (e) {
@@ -21,7 +25,11 @@ function parseJson(str) {
       return false;
     }
   }
+<<<<<<< HEAD
   return str;
+=======
+  return obj;
+>>>>>>> 9593684734b838cce50ebcdb4bd273f3e0eaed69
 }
 
 export default {
