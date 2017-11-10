@@ -1,0 +1,55 @@
+<ion-view style="background: #E2E2E2;">
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="ud.goHome()"
+              style="font-size: 13px">
+        <i class="icon ion-ios-arrow-left"></i>返回
+      </button>
+    </div>
+    <h1 class="title ud_weight">设置</h1>
+  </ion-header-bar>
+  <ion-content style="margin-top: 20px;">
+    <div class="list">
+      <ion-toggle ng-model="wifi.checked"
+                  ng-change="watchWifi()" style="padding:9px 16px;">
+        连接wifi自动上传试卷
+      </ion-toggle>
+      <p class="item item-icon-right"
+         ng-click="show('news')"
+         style="padding: 10px 16px;">
+        消息通知
+        <span class="badge badge-assertive" style="top:9px;">3</span>
+        <i class="icon ion-chevron-right" style="font-size: 18px;"></i>
+      </p>
+    </div>
+    <div class="list">
+      <p class="item item-icon-right"
+         ng-click="show('clearCache')"
+         style="padding: 10px 16px;">
+        清理缓存
+        <i class="icon ion-chevron-right" style="font-size: 18px;"></i>
+      </p>
+    </div>
+    <div class="list">
+      <p class="item item-icon-right" style="padding: 10px 16px;">
+        帮助
+        <i class="icon ion-chevron-right" style="font-size: 18px;"></i>
+      </p>
+      <p class="item item-icon-right"
+         ng-click="show('feedback')" style="padding: 10px 16px;">
+        建议与反馈
+        <i class="icon ion-chevron-right" style="font-size: 18px;"></i>
+      </p>
+      <p class="item item-icon-right" style="padding: 10px 16px;">
+        好用?评分表扬一下
+        <i class="icon ion-chevron-right" style="font-size: 18px;"></i>
+      </p>
+    </div>
+  </ion-content>
+  <style type="text/css">
+    .item-toggle .toggle {
+      top: 4px;
+    }
+  </style>
+</ion-view>

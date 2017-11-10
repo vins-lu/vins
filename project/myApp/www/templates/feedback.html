@@ -1,0 +1,46 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="close('feedback')"
+              style="font-size: 13px">
+        <i class="icon ion-ios-arrow-left"></i>返回
+      </button>
+    </div>
+    <h1 class="title ud_weight">建议与反馈</h1>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              style="font-size: 13px">
+       发送
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content style="margin-top: 5px" scroll="false">
+    <div class="content_fd">
+      <textarea placeholder="请描述您的问题"
+                class="question_fd">
+
+      </textarea>
+      <input type="text" class="email_fd"
+             placeholder="请留下您的邮箱,我们会尽快回复">
+    </div>
+
+  </ion-content>
+  <style type="text/css">
+    .content_fd{
+      padding: 0 10px;
+    }
+    .question_fd{
+      width: 100%;
+      height: 40vh;
+      border:1px solid #ddd;
+    }
+    .email_fd{
+      margin-top: 5px;
+      display: block!important;
+      border:1px solid #ddd!important;
+      width: 100%!important;
+    }
+  </style>
+</ion-modal-view>
+

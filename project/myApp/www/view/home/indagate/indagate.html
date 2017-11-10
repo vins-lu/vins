@@ -1,0 +1,134 @@
+<ion-view>
+  <ion-header-bar align-title="center">
+    <div class="buttons">
+      <button class="button button-clear" ng-click="ud.goHome()">
+        <i class="icon ion-ios-arrow-back ud_color"></i>
+      </button>
+    </div>
+    <h1 class="title ud_weight">创建考试</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="ud_item">
+      <i class="icon ion-ios-checkmark ud_size"></i>
+      <span class="item_text">项目名称:</span>
+      <input type="text"
+             class="ud_input"
+             ng-model="foundData.title"
+             ng-blur="ud.infoBlur($event,'title')"
+             placeholder="例如:期中考试"
+             autofocus="autofocus">
+    </div>
+    <div class="ud_item">
+      <i class="icon ion-ios-checkmark ud_size"></i>
+      <span class="item_text">学校名称:</span>
+      <input type="hidden"
+             class="ud_input"
+             ng-value="foundData.schoolid"
+             ng-blur="ud.infoBlur($event,'schoolid')" readonly>
+      <input type="text" class="ud_input" ng-value="foundData.schoolname" readonly>
+    </div>
+    <div class="ud_item">
+      <i class="icon ion-ios-checkmark ud_size"></i>
+      <span class="item_text">考生人数:</span>
+      <input type="text"
+             class="ud_input"
+             ng-model="foundData.students"
+             ng-blur="ud.infoBlur($event,'students')">
+    </div>
+    <div class="ud_item">
+      <i class="icon ion-ios-checkmark ud_size"></i>
+      <span class="item_text">考试时间:</span>
+      <input type="text"
+             class="ud_input"
+             ng-model="foundData.date"
+             ng-blur="ud.infoBlur($event,'date')"
+             id="date" readonly>
+    </div>
+    <div class="ud_item">
+      <i class="icon ion-ios-checkmark ud_size"></i>
+      <span class="item_text">所在年级:</span>
+      <div class="ud_div">
+        <select class="ud_select" ng-model="foundData.level" id="sel">
+          <option value="1">小一</option>
+          <option value="3">小二</option>
+          <option value="5">小三</option>
+          <option value="7">小四</option>
+          <option value="9">小五</option>
+          <option value="11">小六</option>
+          <option value="13">初一</option>
+          <option value="15">初二</option>
+          <option value="17">初三</option>
+          <option value="19">高一</option>
+          <option value="21">高二</option>
+          <option value="23">高三</option>
+        </select>
+      </div>
+    </div>
+    <div class="ud_item">
+      <i class="icon ion-ios-checkmark ud_size"></i>
+      <span class="item_text">所在班级:</span>
+      <div class="ud_div">
+        <input type="text"
+               class="ud_select"
+               ng-model="foundData.class"
+               ng-blur="ud.infoBlur($event,'grade')" id="grade" list="grades"
+               style="border: 1px solid #999;">
+        <datalist id="grades">
+          <option ng-repeat="className in classNameLists"
+                  value="{{className.classname}}"
+                  data-classid="{{className.classid}}">
+            {{className.classname}}
+          </option>
+        </datalist>
+      </div>
+    </div>
+    <div class="ud_item">
+      <i class="icon ion-ios-checkmark ud_size"></i>
+      <span class="item_text">试卷科目:</span>
+      <div class="ud_div">
+        <select class="ud_select"
+                ng-model="foundData.classifyid">
+          <option value="1">语文</option>
+          <option value="2">数学</option>
+          <option value="3">数学(理)</option>
+          <option value="4">数学(文)</option>
+          <option value="5">政治</option>
+          <option value="6">历史</option>
+          <option value="7">地理</option>
+          <option value="8">物理</option>
+          <option value="9">化学</option>
+          <option value="10">生物</option>
+        </select>
+      </div>
+    </div>
+    <div class="ud_item">
+      <i class="icon ion-ios-checkmark ud_size"></i>
+      <span class="item_text">答题纸:</span>
+      <div class="ud_div">
+        <select class="ud_select"
+                ng-model="foundData.cardid">
+          <option ng-repeat="usercard in usercardsLists"
+                  value="{{usercard.cardid}}"
+                  data-classid="{{usercard.cardid}}">
+            {{usercard.title}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <p class="hint">
+      说明：请不要创建其他教师所授科目的试卷，否则该科目的老师将无法看到分析结果。
+    </p>
+  </ion-content>
+  <ion-footer-bar align-title="center" style="background-color:#26C6DA;border-color:#FFA726;">
+    <h1 class="title" ng-click="ud.submitInfo()" style="color: #fff;">下一步</h1>
+  </ion-footer-bar>
+  <style type="text/css">
+    .hint{
+      padding: 10px 16px;
+      text-align: center;
+      color: #999;
+    }
+    .item_text{width: 60px;color: #000;}
+  </style>
+</ion-view>

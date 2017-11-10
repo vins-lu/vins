@@ -1,0 +1,94 @@
+.projectSelect{
+	display: flex;
+	flex-flow: row wrap;
+	margin-right: -1px;
+	height: 14em;
+	transition: height .5s;
+	overflow: hidden;
+}
+.projectSelect.showmore{
+	height: auto;
+}
+.projectSelect div {
+	width: 25%;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	height: 7em;
+	display: flex;
+	flex-flow: column nowrap;
+	text-align: center;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1em;
+	box-sizing: border-box;
+}
+.projectSelect img{
+	width: 3em;
+	height: 3em;
+}
+.projectSelect span{
+	line-height: 2em;
+}
+.projectSelect div.selected{
+	background: rgba(255, 145, 5, 0.61);
+	color: #fff;
+}
+.packup{
+	order: 1;
+}
+
+.chartTitle{
+	position: relative;
+	color: #333;
+	font-size: 0.34rem;
+	text-indent: 0.25rem;
+	font-weight: normal;
+	line-height: 1;
+	padding-bottom: 0.08rem;
+	margin: 0.4rem 0.2rem 0.1rem;
+}
+.chartTitle:after{
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 0.05rem;
+	height: 1em;
+	background-color: #01bf86;
+}
+
+.exams{
+	padding: 0.2rem;
+}
+.exams .examlist{
+	border-radius: 0.1rem;
+    line-height: 2;
+    box-sizing: border-box;
+    padding: 0.2rem;
+    margin-bottom: 0.2rem;
+    color: #fff;
+}
+.exams .examTitle{
+	font-size: 0.32rem;
+}
+.exams .examBase{
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.24rem;
+}
+
+.exams .examlist:nth-child(5n+1){
+	background: #fd5668;
+}
+.exams .examlist:nth-child(5n+2){
+	background: #40adf5;
+}
+.exams .examlist:nth-child(5n+3){
+	background: #faaa62;
+}
+.exams .examlist:nth-child(5n+4){
+	background: #4fd2c3;
+}
+.exams .examlist:nth-child(5n+5){
+	background: #be89e8;
+}

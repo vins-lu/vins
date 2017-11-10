@@ -9,11 +9,11 @@
 function parseJson(str) {
   if (typeof str == 'string') {
     try {
-      if (str.search('/^\{/') > -1 || str.search('/^\[/') > -1) {
+      if (str.search(/^\{/) > -1 || str.search(/^\[/) > -1) {
         var obj = JSON.parse(str);
         return obj;
       } else {
-        return false;
+        return str;
       }
 
     } catch (e) {
@@ -21,7 +21,7 @@ function parseJson(str) {
       return false;
     }
   }
-  return false;
+  return str;
 }
 
 export default {

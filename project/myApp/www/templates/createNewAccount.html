@@ -1,0 +1,46 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="close('createNewAccount')"
+              style="font-size: 13px">
+        <i class="icon ion-ios-arrow-left"></i>返回
+      </button>
+    </div>
+    <h1 class="title ud_weight">关联新的学校</h1>
+  </ion-header-bar>
+  <ion-content style="margin-top: 20px" scroll="false">
+    <p class="item" style="border: none;color: #607DA4;">
+      您的手机号: <span ng-bind="loginData.mobile"></span>
+    </p>
+    <div class="list" style="margin-bottom: 10px;">
+      <p class="item" style="display: flex;align-items: center;padding: 0 16px">
+        <input type="text"
+               style="flex: 1;background-color: transparent;border: none;"
+               ng-model="otherName.name"
+               placeholder="所在学校" list="schools">
+        <datalist id="schools">
+          <option ng-repeat="schoolName in info.citySchool"
+                  value="{{schoolName}}"
+                  data-classid="{{schoolName}}">
+            {{schoolName}}
+          </option>
+        </datalist>
+      </p>
+    </div>
+    <div class="list">
+      <p class="item" style="padding: 0">
+        <select class="item item-divider"
+                ng-model="submitInfo.usertype" style="width: 100%;padding: 4px 15px">
+          <option value="">请选择您的职务</option>
+          <option value="teacher">任课老师</option>
+          <option value="superteacher">班主任</option>
+        </select>
+      </p>
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar-calm">
+    <a class="title">保存</a>
+  </ion-footer-bar>
+</ion-modal-view>
+

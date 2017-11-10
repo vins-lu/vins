@@ -1,0 +1,84 @@
+
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="close('account')"
+              style="font-size: 13px">取消
+      </button>
+    </div>
+    <h1 class="title ud_weight">账户</h1>
+    <div class="buttons">
+      <button class="button ud_color button-clear"
+              ng-click="ud.logOutModel()"
+              style="font-size: 13px">退出登录
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content style="margin-top: 20px" scroll="false">
+    <span id="ud_acc">账户信息</span>
+    <div class="list">
+      <p class="item item-divider">
+        我的账户
+        <span class="item-note" style="padding-right: 10px">
+          {{loginData.mobile}}
+        </span>
+      </p>
+      <p class="item item-divider item-icon-right" ng-click="show('editName')">
+        <i class="icon ion-ios-arrow-right ud_icon" style="font-size: 17px"></i>
+        名字
+        <span class="item-note">
+          {{userInfo.realname}}
+        </span>
+      </p>
+      <p class="item item-divider item-icon-right">
+        <i class="icon ion-ios-arrow-right ud_icon" style="font-size: 17px;visibility: hidden"></i>
+        账户身份
+        <span class="item-note">
+          {{userInfo.usertype}}
+        </span>
+      </p>
+      <p class="item item-divider item-icon-right">
+        <i class="icon ion-ios-arrow-right ud_icon" style="font-size: 17px;visibility: hidden"></i>
+        学校
+        <span class="item-note">
+          {{ud.account.fullname }}
+        </span>
+      </p>
+      <a class="item item-divider item-icon-right" ng-click="show('changepw')">
+        <i class="icon ion-ios-arrow-right ud_icon" style="font-size: 17px"></i>
+        修改密码
+      </a>
+    </div>
+    <p class="foot">
+      <button ng-click="show('toggleAccount')">切换身份</button>
+      <button ng-click="show('createNewAccount')">关联新的学校</button>
+    </p>
+  </ion-content>
+  <style type="text/css">
+    p.foot{
+      position: fixed;
+      bottom:0;
+      height:42px;
+      margin: 0;
+      padding: 0;
+    }
+    .foot>button{
+      text-align: center;
+      line-height: 42px;
+      width: 50vw;
+      height: 100%;
+      border:none;
+      color: #fff;
+      box-sizing: border-box;
+      float: left;
+    }
+    .foot>button:nth-child(1){
+      background-color: #29B6F6;
+
+    }
+    .foot>button:nth-child(2){
+      background-color: #FFA726;
+    }
+  </style>
+</ion-modal-view>

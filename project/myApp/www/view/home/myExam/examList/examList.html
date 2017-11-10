@@ -1,0 +1,123 @@
+<ino-view>
+	<ion-header-bar align-title="center">
+	  <div class="buttons">
+	    <button class="button button-clear icon icon-left ion-ios-arrow-back ud_color"
+	            ng-click="ud.goTo();"></button>
+	  </div>
+	  <h1 class="title ud_weight">成绩表</h1>
+	</ion-header-bar>
+	<ino-content class="scroll-content ionic-scroll overflow-scroll  has-header">
+		<div class="tab-buttons">
+		  <div class="buttonbar">
+		    <button ng-click="ud.index=0"
+		       class="button"
+		       ng-class="{examListChecked:ud.index==0}">
+		      班级成绩
+		    </button>
+		    <button ng-click="ud.index=1"
+		       class="button"
+		       ng-class="{examListChecked:ud.index==1}">
+		      学生成绩
+		    </button>
+		  </div>
+		  <div class="line" ng-style="{left:ud.index*100/2+'%',width:100/2+'%'}"></div>
+		</div>
+		<div class="showList">
+			<div ng-show="ud.index==0">
+				<div class="row">
+					<div class="examCount col">
+						<div style="border-left: 0.5rem solid #03a9f4;">参考人数：12人</div>
+						<div style="border-left: 0.5rem solid #03a9f4;">及格人数：10人</div>
+					</div>
+					<div id="passRate" class="col  col-center" style="height: 10rem;"></div>
+				</div>
+				<div class="row" style="border-top: 1px solid #ccc;">
+					<div class="col" id="score" style="width: 100%;height: 20rem;"></div>
+				</div>
+				<div class="table">
+					<div class="tableTitle" style="color: #03a9f4;">得分率最高的十题</div>
+					<table>
+						<tr style="background: #03a9f4; color: #ffffff;">
+							<th>大题</th>
+							<th>小题</th>
+							<th>分值</th>
+							<th>得分率</th>
+						</tr>
+						<tr ng-repeat="problem in score.highScoredProblem">
+							<td>{{problem.belongto}}</td>
+							<td>{{problem.detail}}</td>
+							<td>{{problem.score}}</td>
+							<td>{{problem.scored}}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="table">
+					<div class="tableTitle" style="color: #ff9800;">得分率最低的十题</div>
+					<table>
+						<tr style="background: #ff9800;color: #ffffff;">
+							<th>大题</th>
+							<th>小题</th>
+							<th>分值</th>
+							<th>得分率</th>
+						</tr>
+						<tr ng-repeat="problem in score.lowScoredProblem">
+							<td>{{problem.belongto}}</td>
+							<td>{{problem.detail}}</td>
+							<td>{{problem.score}}</td>
+							<td>{{problem.scored}}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="table">
+					<div class="tableTitle" style="color: #03a9f4;">知识点分析</div>
+					<table>
+						<tr style="background: #03a9f4; color: #ffffff;">
+							<th>知识点</th>
+							<th>次数占比</th>
+							<th>分数占比</th>
+							<th>错误率</th>
+						</tr>
+						<tr ng-repeat="point in score.knowledgePoint">
+							<td>{{point.name}}</td>
+							<td>{{point.acount}}</td>
+							<td>{{point.weight}}</td>
+							<td>{{point.error}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div ng-show="ud.index==1">
+				<table class="table">
+					<tr style="background: #03a9f4; color: #ffffff;">
+						<th>学号</th>
+						<th>姓名</th>
+						<th>分数</th>
+						<th>排名</th>
+						<th>总排名</th>
+					</tr>
+					<tr ng-repeat='student in score.studentScore'>
+						<td>{{student.studentNo}}</td>
+						<td>{{student.studentName}}</td>
+						<td>{{student.studentScore}}</td>
+						<td>{{student.order}} <i class="icon ion-ios-arrow-thin-up"></i></td>
+						<td>{{student.gradeOrder}} <i class="icon ion-ios-arrow-thin-down"></i></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</ino-content>
+
+	<style>
+	.buttonbar{display: flex;justify-content: space-between;}
+	.buttonbar button{flex: 1;}
+	.buttonbar button.activated{background: transparent;border:none;outline: none;}
+	.examListChecked{background: #29b6f6;color: #fff !important;}
+	.showList{margin-top: 4rem;}
+	.examCount div{text-indent: 0.5rem;margin-bottom: 0.3rem;position: relative;}
+	.examCount div:after{position: absolute;content: "";bottom: -2px;width: 80%;left: 0.5rem;height: 1px;background-color: #999;}
+	.table{width: 100%;text-align: center;border-top: 1px solid #ccc;margin-top: 0.2rem;}
+	.table .tableTitle{margin:0.5rem;}
+	table{width: 100%;}
+	table tr{height: 2rem;line-height: 2rem;border-bottom: 1px solid #ccc;}
+	</style>
+</ino-view>

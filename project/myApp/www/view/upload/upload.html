@@ -1,0 +1,108 @@
+<ion-view>
+  <ion-header-bar align-title="center">
+    <div class="buttons">
+      <button class="button button-clear icon icon-left ion-ios-arrow-back ud_color"
+              ng-click="ud.goTo();"></button>
+    </div>
+    <h1 class="title ud_weight">上传试卷类型</h1>
+    <div class="buttons">
+      <button class="button" ng-click="ud.upload()">上传</button>
+    </div>
+  </ion-header-bar>
+  <ion-content scroll="false">
+    <div class="list" style="margin: 0;">
+      <p class="item_upload li_upload" style="border-top: none;">
+        <span>请选择上传试卷类型</span>
+        <span style="display: flex;align-items: center;">
+          点击<i class="ion ion-ios-camera"></i>拍照
+        </span>
+      </p>
+      <p class="item_upload">
+        <a data-type="blankpaper" ng-click="ud.managePhoto('blankpaper')">
+          <span>1、空白试卷</span>
+          <span>已拍张数:<i>{{img.blankpaper.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('blankpaper')"></i>
+      </p>
+      <p class="item_upload">
+        <a data-type="studentpapers" ng-click="ud.managePhoto('studentpapers')">
+          <span>2、已作答的试卷</span>
+          <span>已拍张数:<i>{{img.studentpapers.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('studentpapers')"></i>
+      </p>
+      <p class="item_upload">
+        <a data-type="machinecard" ng-click="ud.managePhoto('machinecard')">
+          <span>3、机读卡</span>
+          <span>已拍张数:<i>{{img.machinecard.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('machinecard')"></i>
+      </p>
+      <p class="item_upload">
+        <a data-type="studentanswers" ng-click="ud.managePhoto('studentanswers')">
+          <span>4、答题纸</span>
+          <span>已拍张数:<i>{{img.studentanswers.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('studentanswers')"></i>
+      </p>
+      <p class="item_upload">
+        <a data-type="standardanswer" ng-click="ud.managePhoto('standardanswer')">
+          <span>5、标准答案</span>
+          <span>已拍张数:<i>{{img.standardanswer.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('standardanswer')"></i>
+      </p>
+    </div>
+  </ion-content>
+  <style type="text/css">
+    .item_upload{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 8px;
+      border-bottom: 1px solid #ddd;
+      margin: 0;
+    }
+    .li {
+      padding: 8px;
+      color: #4d4d4d;
+      font-size:15px;
+    }
+
+    .item_upload>a{
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 20px;
+      font-size: 13px!important;
+    }
+    .ion-big {
+      font-size: 30px !important;
+    }
+    /*ionic*/
+    .ion {
+      font-size: 20px !important;
+      color: #3193FE;
+    }
+
+    .activated {
+      background-color: transparent !important;
+      border: none;
+    }
+
+    .popup-title {
+      font-size: 20px !important;
+      font-weight: 700;
+    }
+
+    .popup {
+      opacity: 0 !important;
+      border-radius: 10px !important;
+    }
+
+    .popup-head {
+      padding-bottom: 0 !important;
+    }
+
+  </style>
+</ion-view>

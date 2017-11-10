@@ -1,0 +1,211 @@
+<ion-view>
+	<ion-header-bar align-title="center">
+	    <div class="buttons">
+      		<button class="button button-clear icon icon-left ion-ios-arrow-back ud_color"
+              ng-click="ud.goTo();"></button>
+    	</div>
+	  	<h1 class="title ud_weight">帮助</h1>
+	  	<div class="buttons" side="right">
+	   	 	<button class="button button-icon button-clear ion-information-circled ud_color" ng-click="changeRightMenu()">
+	    	</button>
+	  	</div>
+	</ion-header-bar>
+	<ion-content>
+		<ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
+		  <ion-slide>
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/createExem.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/add.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>如何创建考试</div>
+		    			<p>点击新建考试。输入考试名称，考生人数，考试时间，所在年级。所在班级。试卷科目，输入完点击下一步之后就创建了属于自己的考试。</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		  <ion-slide>
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/blankPaper.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/love.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>空白试卷</div>
+		    			<p>空白试卷：空白试卷只需上传一份</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		  <ion-slide on-slide-changed="slideHasChanged(index)">
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/answerPaper.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/heart.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>以作答的试卷</div>
+		    			<p>以作答的试卷：学生作答过的试卷</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		  <ion-slide on-slide-changed="slideHasChanged(index)">
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/machineReadableCard.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/card.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>机读卡</div>
+		    			<p>机读卡：用2B铅笔填图，有答案的标准机读卡</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		  <ion-slide on-slide-changed="slideHasChanged(index)">
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/answerSweet.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/img.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>答题纸</div>
+		    			<p>答题纸：用来写你的答案的纸，一般都会提示在答题纸上作答才有效，答在卷子上无效</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		  <ion-slide on-slide-changed="slideHasChanged(index)">
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/standartAnswer.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/right.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>标准答案</div>
+		    			<p>标准答案：试卷的正确答案，自动阅卷时将以此为标准</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		  <ion-slide on-slide-changed="slideHasChanged(index)">
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/uploadExem.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/search.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>查看上传的考试</div>
+		    			<p>在首页“我的考试”中，点击所有的考试，即可查看所有上传的考试列表。</p>
+		    			<p>考试列表状态为“已审核”的状态中，可点击查看此次考试的分析详情。</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		  <ion-slide on-slide-changed="slideHasChanged(index)">
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/associatedSchool.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/partten.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>如何关联多个学校</div>
+		    			<p>点击账户页面右下方，选择关联新的学校，输入学校名称以及职务，再点击保存完成多个学校关联。</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		  <ion-slide on-slide-changed="slideHasChanged(index)">
+		    <div class="box">
+		    	<div class="helpImg">
+		    		<img class="ProblemImg" src="img/help/answerPaper.jpg" alt="">
+		    	</div>
+		    	<div>
+		    		<div class="helpIcon">
+		    			<img src="img/help/code.png" alt="">
+		    		</div>
+		    		<div class="helpText">
+		    			<div>公众号查看考试详情</div>
+		    			<p>打开微信，关注“老师懂你”输入账户名和密码。即可查看考试分析，班主任身份的账号，可以查看本班所有科目考试的情况，以及自己上传的考试。</p>
+		    		</div>
+		    	</div>
+		    </div>
+		  </ion-slide>
+		</ion-slide-box>
+		<div class="pages">{{ page }} / {{ slidesCount }}</div>
+	</ion-content>
+
+	<!--右侧-->
+	<div class="rightMenu" ng-class="{rightMenushow:rightMenuState}">
+	    <ion-list>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(0)">
+	        <img src="img/help/add.png" alt="">如何创建考试
+	      </ion-item>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(1)">
+	        <img src="img/help/love.png" alt="">空白试卷
+	      </ion-item>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(2)">
+	        <img src="img/help/heart.png" alt="">已经作答的试卷
+	      </ion-item>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(3)">
+	        <img src="img/help/card.png" alt="">机读卡
+	      </ion-item>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(4)">
+	        <img src="img/help/img.png" alt="">答题纸
+	      </ion-item>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(5)">
+	        <img src="img/help/right.png" alt="">标准答案
+	      </ion-item>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(6)">
+	        <img src="img/help/search.png" alt="">查看上传的考试
+	      </ion-item>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(7)">
+	        <img src="img/help/partten.png" alt="">如何关联多个学校
+	      </ion-item>
+	      <ion-item class="ud_li" ng-click="changeHelpPage(8)">
+	        <img src="img/help/code.png" alt="">公众号查看考试详情
+	      </ion-item>
+	    </ion-list>
+	</div>
+	<style>
+		.slider{height: 95%;}
+		.box{height: 100%;}
+		.scroll{height: 100%;overflow: hidden;}
+		.rightMenu{position: absolute;left: 101%;width: 100%;height: 100%;top: 44px;transition: left .8s;background:rgba(224,224,224,1);}
+		.rightMenushow{left: 20%;}
+		.helpImg{height: 65%;width: 100%;}
+		.helpImg img{width: 90%;vertical-align: middle;max-height: 96%;margin-left: 5%;}
+		.helpIcon{width: 55px;height: 55px;background: #d9f0ff;border-radius: 100%;text-align: center;margin-left: 1rem;}
+		.helpIcon img{width: 24px;height: 24px;margin-top: 16px;}
+		.pages{height: 5%;line-height: 5%;text-align: center;}
+		.helpText{text-align: left;font-size: 1rem;margin-left: 1rem;}
+		.helpText div{font-size: 1.5rem;margin-top: 1rem;}
+		.helpText p{margin-top: 1rem;}
+	</style>
+</ion-view>

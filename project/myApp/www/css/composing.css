@@ -1,0 +1,86 @@
+.confirm{
+	/* margin-top:50%;
+	margin-left: auto;
+	margin-right: auto; */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 580px;
+	height: auto;
+	-moz-border-radius:24px;
+	-webkit-border-radius: 24px;
+	border-radius:24px;
+	border: 2px solid #0fc1fc;
+	background:#ffffff;
+	padding-top:44px;
+}
+
+.confirm > .title{
+	width: 100%;
+	margin-bottom: 32px;
+}
+
+.confirm > .content{
+	width: 100%;
+	margin-bottom: 60px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.confirm > .bottom{
+	width: 100%;
+	border-top: 2px solid #0fc1fc; 
+	height: 84px;
+	line-height: 84px;
+}
+.confirm > .bottom >div{
+	display: inline-block;
+	width: 49%;
+}
+
+.confirm > .bottom > .okcss{
+	border-left: 2px solid #0fc1fc; 
+	color: #1181e8;
+	height: 100%;
+}
+
+.confirm > .bottom > .cancelcss{
+	height: 100%;
+}
+
+.showTipcss{
+	width: 580px;
+	/* padding: 44px 50px 44px 50px; */
+	-moz-border-radius: 24px;
+	-webkit-border-radius: 24px;
+	border-radius:24px;
+	border: 2px solid #0fc1fc;
+	background:#ffffff;
+	font-size: 26px;
+}
+
+.showTipcss > .content{
+	padding:62px 10px 80px 10px;
+	line-height: 150%;
+}
+
+.showTipcss > .btn{
+	height: 84px;
+	line-height: 84px;
+	width: 100%;
+	border-top: 2px solid #0fc1fc;
+	text-align: center;
+	color: #007df4;
+}
+
+.running{
+	width: 0;
+	height: 6.4vw;
+	-moz-border-radius: 15px 0 0 15px;
+	-webkit-border-radius: 15px 0 0 15px;
+	border-radius:15px 0 0 15px;
+	background: url('../images/pages/bg_running.png');
+	background-repeat:repeat-x;
+	background-size:auto 100%;
+}

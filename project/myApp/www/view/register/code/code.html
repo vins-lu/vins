@@ -1,0 +1,39 @@
+
+<ion-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color" ng-click="ud.goBack()">
+        <i class="icon icon-left ion-ios-arrow-back"></i> 返回
+      </button>
+    </div>
+    <h1 class="title ud_weight">注册</h1>
+  </ion-header-bar>
+  <ion-content style="padding-top: 20px" scroll="false">
+    <div class="list">
+      <p class="item" style="border: none;color: #607DA4;">
+        您的手机号: <span ng-bind="phone"></span>
+      </p>
+      <p class="item" style="display: flex;align-items: center;padding: 2px 16px">
+        <input type="text"
+               style="border: none;
+               background: transparent;flex-grow: 1;"
+               ng-model="code.num"
+               placeholder="请输入验证码">
+        <i class="icon ion-close-circled"
+           ng-click="ud.inputEmpty()"
+           ng-show="code.num"></i>
+      </p>
+    </div>
+    <button class="ud_btn" ng-click="ud.next()">
+      下一步
+    </button>
+    <p style="color:#607DA4;text-align: center;">没有收到短信？</p>
+    <button class="ud_btn"
+            id="getcodeBtn"
+            ng-click="ud.nextSend()"
+            style="margin-top: 0;">
+      重新发送
+    </button>
+  </ion-content>
+</ion-view>
+

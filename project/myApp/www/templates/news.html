@@ -1,0 +1,45 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="close('news')"
+              style="font-size: 13px">
+        <i class="icon ion-ios-arrow-left"></i>返回
+      </button>
+    </div>
+    <h1 class="title ud_weight">消息通知</h1>
+  </ion-header-bar>
+  <ion-content style="margin-top: 20px" scroll="false">
+
+    <div class="list_news">
+      <time>2017-04-19 15:26</time>
+      <div class="item_news">
+        <span>2017年4月18日 初三语文期中考试试卷已分析完毕</span>
+        <i class="icon ion-chevron-right"></i>
+      </div>
+    </div>
+  </ion-content>
+  <style type="text/css">
+    .list_news{
+      border-bottom:1px solid #ddd;
+    }
+    .list_news>time{
+      margin-left: 16px;
+      width: 35%;
+      display: block;
+      padding: 4px 5px;
+      border-radius: 20px;
+      background: #ddd;
+      color: #fff;
+      text-align: center;
+    }
+    .item_news{
+      margin-top: 10px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</ion-modal-view>

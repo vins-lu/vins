@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="#607D8B" />
+		<title>试卷题型知识点分析</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<link rel="stylesheet" type="text/css" href="css/composing.css" />
+		<link rel="stylesheet" type="text/css" href="css/reportsubject.css" />
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script src='js/composing.js'></script>
+		<script src="js/global.js"></script>
+		<script src="js/reportsubject.js"></script>
+	</head>
+	<body>
+		<div class="examInfo">
+			<div class="paperTitle">**班</div>
+			<div class="stuInfo"><span class="stuName">**</span><span class="stuClass">**班</span></div>
+			<div class="examReportInfo">
+				<div class="totalScore">
+					<p class="labelText">总分</p>
+					<p><span class="totalScoreText">*</span>分</p>
+				</div>
+				<div class="score">
+					<p class="labelText">得分</p>
+					<p><span class="scoreText">*</span>分</p>
+					<div class="mark"></div>
+				</div>
+				<div class="classRank">
+					<p class="labelText">班级排名</p>
+					<p><span class="classRankText">*</span>名</p>
+					<div class="mark"></div>
+				</div>
+				<div class="gradeRank hidden">
+					<p class="labelText">年级排名</p>
+					<p><span class="gradeRankText">*</span>名</p>
+				</div>
+				<div class="errorNum">
+					<p class="labelText">错题</p>
+					<p><span class="errorNumText">*</span>道</p>
+				</div>
+			</div>
+		</div>
+		<div class="reportPanel">
+			<div class="lostKnowledge hidden">
+				<h2 class="chartTitle">失分最多的知识点</h2>
+				<div class="detail" style="width: 100%;height: 5rem;"></div>
+			</div>
+			<div class="subjectAnalysis">
+				<h2 class="chartTitle">题型分析</h2>
+				<div class="detail" style="width: 100%;height: 6rem;"></div>
+			</div>
+			<div class="questionAnalysis">
+				<h2 class="chartTitle">题目分析</h2>
+				<div class="lostQuestion">
+					<!-- <h2 class="chartTitle">失分最多的题目</h2> -->
+					<div class="detail" style="width: 100%;height: 3rem;"></div>
+				</div>
+				<div class="question_detail">
+					<div class="qu_title greenFont">
+						<span class="qu_num1 hidden">大题题号</span>
+						<span class="qu_num2">小题题号</span>
+						<span class="qu_ts">总分</span>
+						<span class="qu_state">扣分情况</span>
+						<span class="qu_detail">详情</span>
+					</div>
+					<ul class="qu_con"></ul>
+					<div class="showMore hidden">展示全部</div>
+				</div>
+			</div>
+			<div class="knowledgeAnalysis hidden">
+				<h2 class="chartTitle">错误知识点</h2>
+				<div class="detail"></div>
+				<div class="showMore hidden">展示全部</div>
+			</div>
+		</div>
+		<div class="analyse">
+			<div class="analyse_sub hidden">
+				<div class="mask"></div>
+				<div class="analyse_wrap">
+					<div class="analyse_head">
+						<div class="title">题目解析</div>
+					</div>
+					<div class="analyse_con">
+						<div class="sub_text">函数在数学上的定义：给定一个数集A,对A施加对应法则f,记作f（A）,得到另一数集B,也就是B=f（A）.那么这个关系式就叫函数关系式,简称函数.函数在数学上的定义：给定一个数集A,对A施加对应法则f,记作f（A）,得到另一数集B,也就是B=f（A）.那么这个关系式就叫函数关系式,简称函数.</div>
+					</div>
+					<div class="msgPush">点击此处每天推送相关练习题目（5天）</div>
+				</div>
+			</div>
+			<div class="analyse_kd hidden">
+				<div class="mask"></div>
+				<div class="analyse_wrap">
+					<div class="analyse_head">
+						<div class="title">知识点解析</div>
+					</div>
+					<div class="analyse_con">
+						<div class="kd_text">函数在数学上的定义：给定一个数集A,对A施加对应法则f,记作f（A）,得到另一数集B,也就是B=f（A）.那么这个关系式就叫函数关系式,简称函数.函数在数学上的定义：给定一个数集A,对A施加对应法则f,记作f（A）,得到另一数集B,也就是B=f（A）.那么这个关系式就叫函数关系式,简称函数.</div>
+					</div>
+					<div class="msgPush">点击此处每天推送相关练习题目（5天）</div>
+				</div>
+			</div>
+		</div>
+		<div class="model hidden">
+			<div class="kd_list">
+				<div class="kd_name greenFont"></div>
+				<div class="kd_num"></div>
+				<div class="kd_comment">
+					<h3 class="labelText">点评</h3>
+					<p class="text">
+						完全掌握该知识点本张试卷可多得<span class="extraScore">100</span>分，该知识点中考经常考到。
+					</p>
+				</div>
+				<div class="kd_detail">
+					<div class="showDetailBtn">点击此处查看知识点讲解</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

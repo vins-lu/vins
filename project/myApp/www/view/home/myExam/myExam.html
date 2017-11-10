@@ -1,0 +1,76 @@
+
+<ion-view title="我的考试">
+  <div class="tab-buttons">
+    <div class="button-bar">
+      <a ng-click="ud.index=0"
+         class="button tab-otherBorder"
+         ng-style="{color:ud.index==0?'#00BCD4':''}">
+        未完成的考试
+      </a>
+      <a ng-click="ud.index=1"
+         class="button"
+         ng-style="{color:ud.index==1?'#00BCD4':''}">
+        所有的考试
+      </a>
+    </div>
+    <div class="line" ng-style="{left:ud.index*100/2+'%',width:100/2+'%'}"></div>
+  </div>
+  <ion-content scroll="true"  has-bouncing="false" style="margin-top: 48px;">
+    <ion-scroll overflow-scroll="true" ng-style="{height:screenHeight+'px'}">
+      <ion-slide-box show-pager="false" active-slide="ud.index" on-slide-changed="ud.index = $index">
+        <ion-slide>
+          <div class="list">
+            <a class="ud_item" ng-repeat="classinfo in classes">
+              <img src="img/ionic.png" alt="">
+              <div>
+                <h4>{{classinfo.title}}</h4>
+                <span>{{classinfo.classname}}</span>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="list">
+
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </ion-scroll>
+  </ion-content>
+  <style type="text/css">
+    .tab-otherBorder{
+      border-right:1px solid #ddd!important;
+    }
+    .tab-buttons{
+      position:fixed;
+      top:43px;
+      z-index: 9999;
+      width: 100vw;
+      border-bottom:1px solid #ddd;
+    }
+    .tab-buttons .button.activated{
+      border-color:#f8f8f8;
+      background:#f8f8f8;
+    }
+    .button-bar .button{
+      padding:0;
+    }
+    .tab-buttons .line{
+      display:inline-block;
+      position:absolute;
+      top:46px;
+      z-index:9;
+      height:3px;
+      line-height:3px;
+      border-bottom:3px solid #00BCD4;
+      transition:left .2s ease-in-out;
+    }
+    /*内容*/
+    .ud_item>img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  </style>
+
+</ion-view>

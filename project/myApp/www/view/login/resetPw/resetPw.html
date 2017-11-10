@@ -1,0 +1,40 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color" ng-click="udr.goBack()">
+        <i class="icon icon-left ion-ios-arrow-back"></i> 返回
+      </button>
+    </div>
+    <h1 class="title ud_weight">重置密码</h1>
+  </ion-header-bar>
+  <ion-content style="padding-top: 20px">
+    <div class="list">
+      <p class="item" style="display: flex;align-items: center;padding: 2px 16px">
+        <input type="password"
+               style="border: none;
+               background: transparent;flex-grow: 1;"
+               ng-model="passInfo.pass1"
+               placeholder="新密码">
+        <i class="icon ion-close-circled"
+           ng-click="ud.inputEmpty('pass1')"
+           ng-show="passInfo.pass1"></i>
+      </p>
+    </div>
+    <div class="list">
+      <p class="item" style="display: flex;align-items: center;padding: 2px 16px">
+        <input type="password"
+               style="border: none;
+               background: transparent;flex-grow: 1;"
+               ng-model="passInfo.pass2"
+               placeholder="请再输入一次">
+        <i class="icon ion-close-circled"
+           ng-click="ud.inputEmpty('pass2')"
+           ng-show="passInfo.pass2"></i>
+      </p>
+    </div>
+    <button class="ud_btn" ng-click="ud.resetPw()">
+      重置密码
+    </button>
+
+  </ion-content>
+</ion-modal-view>

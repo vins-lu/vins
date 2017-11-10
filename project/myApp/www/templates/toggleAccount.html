@@ -1,0 +1,30 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="close('createNewAccount')"
+              style="font-size: 13px">
+        <i class="icon ion-ios-arrow-left"></i>返回
+      </button>
+    </div>
+    <h1 class="title ud_weight">切换学校</h1>
+  </ion-header-bar>
+  <ion-content scroll="false">
+    <div class="list" ng-show="schools">
+      <div ng-repeat="row in schools" ng-click="ud.toggleAccount(row.schoolid)">
+        <div>帐号{{$index + 1}}</div>
+        <div class="ud_item accountlist">
+          <img src="img/1.png" alt="">
+          <div>
+            <div>{{row.fullname}}</div>
+            <div>职称：{{}}</div>
+            <div>所带班级：3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <style>
+  .accountlist{border-top: 1px solid #999;justify-content: flex-start;}
+  </style>
+</ion-modal-view>

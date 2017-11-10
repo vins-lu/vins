@@ -1,0 +1,36 @@
+body{
+	font-size: 0.28rem;
+}
+.form{
+	color: #333;
+	padding: 0 0.2rem;
+}
+.form .field{
+	display: flex;
+	flex-flow: row nowrap;
+	height: 1rem;
+	line-height: 1rem;
+}
+.field input{
+	font-size: 0.26rem;
+	line-height: 1rem;
+	flex-grow: 1;
+}
+#code{
+	margin-right: 0.3rem;
+}
+#getCode{
+	align-self: center;
+	padding: 0.2rem 0.25rem;
+	line-height: 1;
+	font-size: 0.28rem;
+	color: #fff;
+	border-radius: 0.1rem;
+	background: #01bf86;    
+	min-width: 5em;
+    text-align: center;
+    min-height: 1em;
+}
+.regist,.handleArea{
+	margin-top: 0.6rem;
+}

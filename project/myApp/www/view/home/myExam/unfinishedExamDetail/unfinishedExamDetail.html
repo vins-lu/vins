@@ -1,0 +1,203 @@
+<ion-view>
+  <ion-header-bar align-title="center">
+    <div class="buttons">
+      <button class="button button-clear icon icon-left ion-ios-arrow-back ud_color"
+              ng-click="ud.goTo();"></button>
+    </div>
+    <h1 class="title ud_weight">上传试卷类型</h1>
+    <div class="buttons">
+      <button class="button ud_color" ng-click="ud.complete()">完成</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list" style="margin: 0;">
+      <p class="item_upload li_upload" style="border-top: none;">
+        <span>请选择上传试卷类型</span>
+        <span style="display: flex;align-items: center;">
+          点击<i class="ion ion-ios-camera"></i>拍照
+        </span>
+      </p>
+      <p class="item_upload">
+        <a data-type="blankpaper" ng-click="ud.managePhoto('blankpaper')">
+          <span>空白试卷</span>
+          <span>已拍张数:<i>{{imgState.blankpaper.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('blankpaper')"></i>
+        <i class="errorTip" ng-show="ud.getErrorImgCount('blankpaper')">{{ud.getErrorImgCount('blankpaper')}}</i>
+      </p>
+      <!-- <p class="item_upload">
+        <a data-type="studentpapers" ng-click="ud.managePhoto('studentpapers')">
+          <span>2、已作答的试卷</span>
+          <span>已拍张数:<i>{{imgState.studentpapers.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('studentpapers')"></i>
+        <i class="errorTip" ng-show="ud.getErrorImgCount('studentpapers')">{{ud.getErrorImgCount('studentpapers')}}</i>
+      </p> -->
+      <!-- <p class="item_upload">
+        <a data-type="machinecard" ng-click="ud.managePhoto('machinecard')">
+          <span>3、机读卡</span>
+          <span>已拍张数:<i>{{imgState.machinecard.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('machinecard')"></i>
+        <i class="errorTip" ng-show="ud.getErrorImgCount('machinecard')">{{ud.getErrorImgCount('machinecard')}}</i>
+      </p> -->
+      <p class="item_upload">
+        <a data-type="usercard" ng-click="ud.managePhoto('usercard')">
+          <span>答题纸</span>
+          <span>已拍张数:<i>{{imgState.usercard.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('usercard')"></i>
+        <i class="errorTip" ng-show="ud.getErrorImgCount('usercard')">{{ud.getErrorImgCount('usercard')}}</i>
+      </p>
+      <p class="item_upload" ng-show="hadread">
+        <a data-type="stdanswer" ng-click="ud.managePhoto('stdanswer')">
+          <span>标准答案</span>
+          <span>已拍张数:<i>{{imgState.stdanswer.length}}</i></span>
+        </a>
+        <i class="ion-big ion-ios-camera" ng-click="ud.showPhoto('stdanswer')"></i>
+        <i class="errorTip" ng-show="ud.getErrorImgCount(stdanswer)">{{ud.getErrorImgCount('stdanswer')}}</i>
+      </p>
+      
+    </div>
+    <div class="list">
+      <p class="item_upload item_add" style="border-top: none;color: #000;">
+        项目详情
+      </p>
+      <p class="item_upload item_add">
+        <span>项目名称:</span>
+        <span>{{uploadDataDetail.title}}</span>
+      </p>
+      <p class="item_upload item_add">
+        <span>学校名称:</span>
+        <span>{{uploadDataDetail.schoolname}}</span>
+      </p>
+      <p class="item_upload item_add">
+        <span>考生人数:</span>
+        <span>{{uploadDataDetail.exam_students}}</span>
+      </p>
+      <p class="item_upload item_add">
+        <span>考试时间:</span>
+        <span>{{uploadDataDetail.exam_date}}</span>
+      </p>
+      <p class="item_upload item_add">
+        <span>所在年级:</span>
+        <select class="sel_up" ng-model="uploadDataDetail.grade_levelid">
+          <option value="1">小一</option>
+          <option value="3">小二</option>
+          <option value="5">小三</option>
+          <option value="7">小四</option>
+          <option value="9">小五</option>
+          <option value="11">小六</option>
+          <option value="13">初一</option>
+          <option value="15">初二</option>
+          <option value="17">初三</option>
+          <option value="19">高一</option>
+          <option value="21">高二</option>
+          <option value="23">高三</option>
+        </select>
+      </p>
+      <p class="item_upload item_add">
+        <span>所在班级:</span>
+        <span>{{uploadDataDetail.classname}}</span>
+      </p>
+      <p class="item_upload item_add">
+        <span>试卷科目:</span>
+        <select class="sel_up"
+                ng-model="uploadDataDetail.classifyid">
+          <option value="1">语文</option>
+          <option value="2">数学</option>
+          <option value="3">数学(理)</option>
+          <option value="4">数学(文)</option>
+          <option value="5">政治</option>
+          <option value="6">历史</option>
+          <option value="7">地理</option>
+          <option value="8">物理</option>
+          <option value="9">化学</option>
+          <option value="10">生物</option>
+        </select>
+      </p>
+      <ion-toggle ng-model="hadread" toggle-class="toggle-calm">是否申请代阅</ion-toggle>
+    </div>
+  </ion-content>
+  <style type="text/css">
+    .item_upload{
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 8px;
+      border-bottom: 1px solid #ddd;
+      margin: 0;
+    }
+    .errorTip{
+      position: absolute;
+      top: 0rem;
+      right: 0.3rem;
+      padding:0rem 0.4rem;
+      background: red;
+      border-radius: 50%;
+      font-size: 0.5rem;
+      text-align: center;
+      color: #fff;
+    }
+    .li_upload {
+      padding: 8px;
+      color: #4d4d4d;
+      font-size:15px;
+    }
+
+    .item_upload>a{
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 20px;
+      font-size: 13px!important;
+    }
+    .item_upload>a>span:nth-child(1){
+      color: #000;
+    }
+    .ion-big {
+      font-size: 30px !important;
+    }
+    /*ionic*/
+    .ion {
+      font-size: 20px !important;
+      color: #3193FE;
+    }
+
+    .activated {
+      background-color: transparent !important;
+      border: none;
+    }
+
+    .popup-title {
+      font-size: 20px !important;
+      font-weight: 700;
+    }
+
+    .popup {
+      opacity: 0 !important;
+      border-radius: 10px !important;
+    }
+
+    .popup-head {
+      padding-bottom: 0 !important;
+    }
+    .item_add{
+      font-size: 15px;
+      padding: 8px;
+      justify-content:flex-start;
+    }
+    .item_add>span:nth-child(1){
+      padding-right: 15px;
+    }
+
+    .item_add>span:nth-child(2){
+      color: #42AEF4;
+    }
+    .sel_up{
+      flex-grow: 1;
+    }
+  </style>
+</ion-view>
+

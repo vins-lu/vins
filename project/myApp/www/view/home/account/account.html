@@ -1,0 +1,54 @@
+
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="close('account')"
+              style="font-size: 13px">取消
+      </button>
+    </div>
+    <h1 class="title ud_weight">账户</h1>
+    <div class="buttons">
+      <button class="button ud_color button-clear"
+              ng-click="ud.logOutModel()"
+              style="font-size: 13px">退出登录
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content style="margin-top: 20px" scroll="false">
+    <span id="ud_acc">账户信息</span>
+    <div class="list">
+      <p class="item item-divider">
+        我的账户
+        <span class="item-note" style="padding-right: 10px">
+          {{loginData.mobile}}
+        </span>
+      </p>
+      <p class="item item-divider item-icon-right" ng-click="show('editName')">
+        <i class="icon ion-ios-arrow-right ud_icon" style="font-size: 17px"></i>
+        名字
+        <span class="item-note">
+          {{userInfo.realname}}
+        </span>
+      </p>
+      <p class="item item-divider item-icon-right">
+        <i class="icon ion-ios-arrow-right ud_icon" style="font-size: 17px;visibility: hidden"></i>
+        账户身份
+        <span class="item-note">
+          {{userInfo.usertype }}
+        </span>
+      </p>
+      <p class="item item-divider item-icon-right">
+        <i class="icon ion-ios-arrow-right ud_icon" style="font-size: 17px;visibility: hidden"></i>
+        学校
+        <span class="item-note">
+          {{schools[0].fullname }}
+        </span>
+      </p>
+      <a class="item item-divider item-icon-right" ng-click="show('changepw')">
+        <i class="icon ion-ios-arrow-right ud_icon" style="font-size: 17px"></i>
+        修改密码
+      </a>
+    </div>
+  </ion-content>
+</ion-modal-view>

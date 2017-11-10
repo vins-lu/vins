@@ -1,0 +1,5 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='container'>
+  <image catchtap="chooseImg" style="width: 200px; height: 200px;" src="../../images/icon/takephoto.png"></image>
+  <view class='tryit'><navigator open-type='redirect' url="../survey/survey">我想试用一下</navigator></view>
+</view>

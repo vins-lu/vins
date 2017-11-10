@@ -1,0 +1,105 @@
+<ion-view>
+  <ion-content  style="margin-top: 48px;">
+    <ion-refresher
+      pulling-text="下拉刷新"
+      on-refresh="doRefreshUnfinished()">
+    </ion-refresher>
+    <div class="oneShow" ng-if="!rows.length">
+     <span>您还没有创建自己的考试</span>
+      <p>
+        点击下方新建考试
+        <br>创建属于自己的考试记录吧
+        <br>
+        <img style="width: 2rem;" src="img/instructionsDown.png" alt="">
+      </p>
+    </div>
+    <div class="list" ng-show="rows.length">
+         <!-- href="#/examList/{{row.uploadid}}" -->
+      <a class="ud_item ud_add"
+         ng-repeat="row in rows"
+         ng-if="row.status !='created'"
+         ng-click="ud.goToExamAnalyze(row.status,row.uploadid)">
+        <img src="img/{{row.classifyid}}.png" alt="">
+        <div class="ud_item_title">
+          <h4>{{row.title}}</h4>
+          <span>{{row.classname}}--{{classifyArr[row.classifyid]}}--{{row.exam_students}}张</span>
+        </div>
+        <div class="ud_date">
+          <span>{{row.exam_date}}</span>
+          <span class="ud_state">{{$root.uploadStatus[row.status]}}</span>
+          <!-- <span>上午</span> -->
+        </div>
+        <span><i class="ion ion-chevron-right"></i></span>
+      </a>
+    </div>
+  </ion-content>
+  <style type="text/css">
+
+
+    /*内容*/
+    .ud_item > img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    h4 {
+      padding: 0;
+      margin: 0;
+    }
+
+    .ud_item_title{
+      width: 40%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ud_item_title > h4 {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .ud_item_title > span {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .ud_add {
+      justify-content: space-between;
+      position: relative;
+    }
+    .ud_date{
+      display: flex;
+      width: 30%;
+      align-self: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      color: #666;
+      font-size: 12px;
+      text-align: right;
+    }
+    .ud_state{
+      font-size: 10px;
+      color: red;
+    }
+    /**/
+    .oneShow{
+      height:calc(100vh - 134px);
+      text-align: center;
+    }
+    .oneShow>span{
+      position: relative;
+      top:calc(50vh - 110px);
+      font-size: 20px;
+    }
+    .oneShow>p{
+      width: 100%;
+      position: fixed;
+      bottom:0;
+      color: #999;
+    }
+  </style>
+
+</ion-view>
+

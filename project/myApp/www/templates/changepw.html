@@ -1,0 +1,53 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="close('changepw')"
+              style="font-size: 13px">
+        <i class="icon ion-ios-arrow-left"></i>
+      </button>
+    </div>
+    <h1 class="title ud_weight">修改密码</h1>
+  </ion-header-bar>
+  <ion-content style="margin-top: 20px" scroll="false">
+    <div class="list">
+      <p class="item" style="display: flex;align-items: center;padding: 0 16px;">
+        <input type="text"
+               style="flex: 1;background-color: transparent;border: none;"
+               ng-model="updatePw.oldpass"
+               placeholder="旧密码">
+        <i class="icon ion-close-circled"
+           ng-click="ud.inputEmpty('oldpass')"
+           ng-show="updatePw.oldpass"></i>
+      </p>
+    </div>
+    <div class="list">
+      <p class="item" style="display: flex;align-items: center;padding: 0 16px;">
+        <input type="text"
+               style="flex: 1;background-color: transparent;border: none;"
+               ng-model="updatePw.newpass"
+               placeholder="新密码">
+        <i class="icon ion-close-circled"
+           ng-click="ud.inputEmpty('newpass')" ng-show="updatePw.newpass"></i>
+      </p>
+    </div>
+    <div class="list">
+      <p class="item" style="display: flex;align-items: center;padding: 0 16px;">
+        <input type="text"
+               style="flex: 1;background-color: transparent;border: none;"
+               ng-model="updatePw.newpass2"
+               placeholder="确认新密码">
+        <i class="icon ion-close-circled"
+           ng-click="ud.inputEmpty('newpass2')" ng-show="updatePw.newpass2"></i>
+      </p>
+    </div>
+    <button class="button button-full button-calm" ng-click="ud.confirm()">
+      确认
+    </button>
+  </ion-content>
+  <style type="text/css">
+    .list{
+      margin-bottom: 10px!important;
+    }
+  </style>
+</ion-modal-view>

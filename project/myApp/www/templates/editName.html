@@ -1,0 +1,28 @@
+
+<ion-modal-view>
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color"
+              ng-click="close('editName')"
+              style="font-size: 13px">取消
+      </button>
+    </div>
+    <h1 class="title ud_weight">名字</h1>
+    <div class="buttons">
+      <button class="button ud_color button-clear"
+              ng-click="ud.saveName()"
+              style="font-size: 13px">保存
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content style="margin-top: 20px" scroll="false">
+     <div class="list">
+       <p class="item" style="display: flex;align-items: center;padding: 0 16px">
+         <input type="text"
+                style="flex: 1;background-color: transparent;border: none;"
+                ng-model="otherName.name"
+                placeholder="请输入您的姓名">
+       </p>
+     </div>
+  </ion-content>
+</ion-modal-view>

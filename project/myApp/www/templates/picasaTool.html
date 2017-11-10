@@ -1,0 +1,146 @@
+<ion-view>
+  <ion-header-bar align-title="center">
+    <div class="div">
+      <div class="buttons">
+        <button class="button"
+                ng-click="ud.upload()"
+                ng-show="tool.isShow">上传</button>
+        <button class="button icon-left"
+                ng-click="alert(1)"
+                ng-show="!tool.isShow">全选</button>
+        <button class="button icon-left"
+                ng-click="ud.closePicasatool()">关闭</button>
+      </div>
+      <h1 class="title ud_weight" style="flex-grow: 1;" ng-bind="tool.title"></h1>
+      <div class="buttons">
+        <button class="button" ng-click="ud.select()">{{tool.rightText}}</button>
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <ul class="photoList">
+      <li ng-repeat="imgList in imgState[curretEditor]"
+          ng-class="($index+1)%4=='0'?'clearRight':''">
+        <span ng-href="{{imgList.url}}" data-size="800x1142">
+            <img ng-src="{{imgList.url}}" />
+        </span>
+        <i class="icon ion-checkmark-circled imgStateIcon" style="color: blue;" ng-if="!imgList.error && imgList.status != 'waitUpload'"></i>
+        <i class="icon ion-help-circled imgStateIcon reuploadIcon" ng-if="imgList.error"></i>
+        <ion-checkbox ng-show="!tool.isShow"
+                      ng-disabled="!imgList.checkable"
+                      style="position: absolute;bottom:5px!important;right:-20px!important;"
+                      ng-model="imgList.checked"
+                      ng-checked="imgList.checked"
+                      ng-class="{'hide':!imgList.checkable}"
+                      ></ion-checkbox>
+        <!-- <ion-spinner icon="dots" class="spinner-dark" ng-show="imgList.uploadState"></ion-spinner> -->
+      </li>
+    </ul>
+  </ion-content>
+  <p id="foot" style="display: none;">
+    <!-- <span>已选择{{ imgState[curretEditor+"Count"] }}张</span> -->
+    <i class="ion-trash-a" ng-click="ud.del()"></i>
+  </p>
+
+  <!--以下内容不要管-->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                          </div>
+                      </div>
+                  </div>
+               </div>
+               <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+               </div>
+               <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+               <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+               <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+         </div>
+      </div>
+    </div>
+  </div>
+  <style type="text/css">
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      width: calc(calc(100vw - 6px) / 4);
+      height: calc(calc(100vw - 6px) / 4);
+      margin-right: 2px;
+      margin-bottom: 2px;
+      background-color: #999;
+      position: relative;
+      overflow: hidden;
+    }
+    .photoList span{display: inline-block;}
+    .photoList img{width: 100%;}
+
+    .spinner.spinner-dark{
+      position: absolute;
+      top:0;
+      height: 100%;
+      background: rgba(255,255,255,0.5);
+      z-index: 10;
+    }
+    .spinner svg{
+      width: 100%;
+      height: 100%;
+    }
+    .imgStateIcon{color: red;font-size: 1rem;position: absolute;bottom: 0.2rem;left: 0.3rem;}
+
+    /**/
+    .div {
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .clearRight {
+      margin-right: 0 !important;
+    }
+
+    .activated {
+      background-color: transparent !important;
+      border: none;
+    }
+
+    .foot {
+      position: fixed;
+    }
+    .item {
+      background-color: transparent !important;
+      border: none;
+    }
+    /*底部*/
+    #foot{
+      position: fixed;
+      bottom:0;
+      margin: 0;
+      padding: 8px;
+      width: 100%;
+      border-top: 1px solid #8f8f8f;
+    }
+    #foot>i{
+      font-size: 24px;
+      float: right;
+      color: #00C0DB;
+    }
+    .hide{display: none !important;}
+  </style>
+</ion-view>

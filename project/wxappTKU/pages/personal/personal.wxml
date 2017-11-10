@@ -1,0 +1,46 @@
+<!--pages/personal/personal.wxml-->
+<view class='container'>
+  <view class='base bg5'>
+    <view>
+      <view>50天</view>
+      <view>坚持学习</view>
+    </view>
+    <view>
+      <view class='headshot'>
+        <image src='{{avatarUrl}}'></image>
+      </view>
+      <view>{{nickName}}</view>
+    </view>
+    <view>
+      <view>{{examNums}}份</view>
+      <view>已上传试卷</view>
+    </view>
+  </view>
+  <view class='handle'>
+    <navigator url='../examlist/examlist'>
+      <view>
+        <view class='labelText'>已上传试卷</view>
+        <view>共{{examNums}}套，{{errorExamNums}}张问题试卷</view>
+      </view>
+      <view class='detailArrow'><image src='../../images/icon/rightArrow.png'></image></view>
+    </navigator>
+    <navigator url='../myCollect/myCollect'>
+      <view>
+        <view class='labelText'>我的收藏</view>
+      </view>
+      <view class='detailArrow'><image src='../../images/icon/rightArrow.png'></image></view>
+    </navigator>
+    <navigator url='../testAnalysis/testAnalysis'>
+      <view>
+        <view class='labelText'>我的测试</view>
+      </view>
+      <view class='detailArrow'><image src='../../images/icon/rightArrow.png'></image></view>
+    </navigator>
+    <navigator url='../fastTest/fastTest'>
+      <view>
+        <view class='labelText'>快速测试</view>
+      </view>
+      <view class='detailArrow'><image src='../../images/icon/rightArrow.png'></image></view>
+    </navigator>
+  </view>
+</view>

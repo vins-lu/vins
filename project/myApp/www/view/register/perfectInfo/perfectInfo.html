@@ -1,0 +1,113 @@
+<ion-view view-title="完善个人信息">
+  <ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear ud_color" ng-click="udr.goBack()">
+        <i class="icon icon-left ion-ios-arrow-back"></i> 返回
+      </button>
+    </div>
+    <h1 class="title ud_weight">完善个人信息</h1>
+  </ion-header-bar>
+  <ion-content style="padding-top: 20px" scroll="false">
+    <p class="item" style="border: none;color: #607DA4;">
+      您的手机号: <span ng-bind="phone"></span>
+    </p>
+    <div class="list" style="margin-bottom: 10px;">
+      <p class="item item-divider" style="padding: 0 16px;">
+        <input type="text"
+               placeholder="您的姓名" style="width:100%;"
+               ng-model="submitInfo.name">
+      </p>
+    </div>
+    <div class="list" style="margin-bottom: 10px;">
+      <select class="item item-divider ud_sel"
+              ng-model="submitInfo.sex"
+              ng-options=" sData for sData in sexData">
+        <option value="">性别</option>
+      </select>
+    </div>
+    <div class="list" style="margin-bottom: 10px;">
+      <p class="item item-divider" style="padding: 0 16px;">
+        <input type="text" placeholder="所在学校"
+               style="width:100%;"
+               ng-model="submitInfo.schoolid">
+      </p>
+    </div>
+    <div class="list" style="margin-bottom: 10px;">
+      <select class="item item-divider ud_sel"
+              ng-model="submitInfo.usertype">
+        <option value="">请选择您的职业</option>
+        <option value="teacher">任课老师</option>
+        <option value="superteacher">班主任</option>
+      </select>
+    </div>
+
+    <div class="list" style="margin-bottom: 10px;"
+         ng-show="submitInfo.usertype=='superteacher'">
+      <p class="item item-divider" style="padding:0 0 0 16px;">
+        年级：
+        <select class="item item-divider gradeSel"
+                ng-model="submitInfo.level">
+          <option value="1">小一</option>
+          <option value="3">小二</option>
+          <option value="5">小三</option>
+          <option value="7">小四</option>
+          <option value="9">小五</option>
+          <option value="11">小六</option>
+          <option value="13">初一</option>
+          <option value="15">初二</option>
+          <option value="17">初三</option>
+          <option value="19">高一</option>
+          <option value="21">高二</option>
+          <option value="23">高三</option>
+        </select>
+      </p>
+    </div>
+    <div class="list" style="margin-bottom: 10px;"
+         ng-show="submitInfo.usertype=='superteacher'">
+      <p class="item item-divider" style="padding: 0 16px;">
+        班级：
+        <input type="text" placeholder="所在班级"
+               ng-model="submitInfo.classname">
+      </p>
+    </div>
+    <div class="list" style="margin-bottom: 10px;"
+         ng-show="submitInfo.usertype=='teacher'">
+      <p class="item item-divider" style="padding:0 0 0 16px;">
+        任教科目：
+        <select class="item item-divider gradeSel"
+                ng-model="submitInfo.classifyid">
+          <option value="1">语文</option>
+          <option value="2">数学</option>
+          <option value="3">数学(理)</option>
+          <option value="4">数学(文)</option>
+          <option value="5">政治</option>
+          <option value="6">历史</option>
+          <option value="7">地理</option>
+          <option value="8">物理</option>
+          <option value="9">化学</option>
+          <option value="10">生物</option>
+        </select>
+      </p>
+    </div>
+    <tags-input ng-model="tag">
+      <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
+  </ion-content>
+  <ion-footer-bar align-title="center"
+                  class="bar-positive"
+                  ng-click="ud.saveRegisterInfo()">
+    <h1 class="title">保存</h1>
+  </ion-footer-bar>
+  <style type="text/css">
+    p.item-divider {
+      display: flex;
+      align-items: center;
+    }
+    .gradeSel{
+      flex: 1;
+      padding: 7px 0 5px 16px;
+      color: #999;
+      font-size: 13px;
+    }
+  </style>
+</ion-view>

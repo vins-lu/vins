@@ -1,0 +1,152 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <!--左侧-->
+  <ion-side-menu side="left">
+    <ion-content class="ud_bgc">
+      <ion-list>
+        <li ng-click="show('account')" class="ud_li ud_login">
+          <i class="icon ion-person ud_distance"></i>
+          {{loginData.mobile}}
+        </li>
+        <ion-item class="ud_li" menu-close href="#/set">
+          <i class="icon ion-ios-gear ud_distance"></i>
+          设置
+        </ion-item>
+        <ion-item ng-click="ud.logOut()" class="ud_li">
+          <i class="icon ion-android-exit ud_distance"></i>
+          退出登录
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+  <!--中间显示内容-->
+  <ion-side-menu-content>
+    <ion-header-bar align-title="center">
+      <div class="buttons" side="left">
+        <button style="display: inline-block!important;" class="button button-icon button-clear ion-navicon-round ud_color"
+                menu-toggle="left">
+        </button>
+      </div>
+      <h1 class="title ud_weight">我的考试</h1>
+      <div class="buttons" side="right">
+        <button style="display: inline-block!important;" class="button button-icon button-clear ion-information-circled ud_color" menu-toggle="right">
+        </button>
+      </div>
+    </ion-header-bar>
+    <div class="tab-buttons">
+      <div class="button-bar">
+        <a ng-click="ud.index=0"
+           class="button tab-otherBorder"
+           ng-style="{color:ud.index==0?'#00BCD4':''}"
+           href="#/home/unfinishedExam">
+          未完成的考试
+        </a>
+        <a ng-click="ud.index=1"
+           class="button"
+           ng-style="{color:ud.index==1?'#00BCD4':''}"
+           href="#/home/completeExam">
+          所有的考试
+        </a>
+      </div>
+      <div class="line" ng-style="{left:ud.index*100/2+'%',width:100/2+'%'}"></div>
+    </div>
+
+    <ion-nav-view name="homeContent"></ion-nav-view>
+    <!--底部-->
+    <ion-footer-bar align-title="center" class="bar-calm">
+      <a class="title" href="#/indagate">新建考试</a>
+    </ion-footer-bar>
+  </ion-side-menu-content>
+  <!--右侧-->
+  <ion-side-menu side="right">
+    <ion-content class="ud_bgc">
+      <ion-list>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',0)">
+          <img src="img/help/add.png" alt="">如何创建考试
+        </ion-item>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',1)">
+          <img src="img/help/love.png" alt="">空白试卷
+        </ion-item>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',2)">
+          <img src="img/help/heart.png" alt="">已经作答的试卷
+        </ion-item>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',3)">
+          <img src="img/help/card.png" alt="">机读卡
+        </ion-item>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',4)">
+          <img src="img/help/img.png" alt="">答题纸
+        </ion-item>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',5)">
+          <img src="img/help/right.png" alt="">标准答案
+        </ion-item>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',6)">
+          <img src="img/help/search.png" alt="">查看上传的考试
+        </ion-item>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',7)">
+          <img src="img/help/partten.png" alt="">如何关联多个学校
+        </ion-item>
+        <ion-item class="ud_li" ng-click="goToHelpPage('allHelp',8)">
+          <img src="img/help/code.png" alt="">公众号查看考试详情
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+  <style type="text/css">
+    /*ionic*/
+    .ion {
+      font-size: 20px !important;
+      color: #3193FE;
+    }
+    .popup-title {
+      font-size: 20px !important;
+      font-weight: 700;
+    }
+
+    .popup {
+      opacity: 0 !important;
+      border-radius: 10px !important;
+    }
+
+    .popup-head {
+      padding-bottom: 0 !important;
+    }
+    .bar{
+      background-image:none!important;
+    }
+
+    /**/
+    .tab-otherBorder {
+      border-right: 1px solid #ddd !important;
+    }
+
+    .tab-buttons {
+      position: fixed;
+      top: 43px;
+      z-index: 9999;
+      width: 100vw;
+      border-bottom: 1px solid #ddd;
+    }
+    .tab-buttons .button.activated {
+      border-color: #f8f8f8;
+      background: #f8f8f8;
+    }
+    .button-bar .button {
+      padding: 0;
+    }
+    .tab-buttons .line {
+      display: inline-block;
+      position: absolute;
+      top: 46px;
+      z-index: 9;
+      height: 3px;
+      line-height: 3px;
+      border-bottom: 3px solid #00BCD4;
+      transition: left .2s ease-in-out;
+    }
+
+    .hide{
+      display: none;!important;
+    }
+  </style>
+</ion-side-menus>
+

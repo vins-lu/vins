@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-header-bar>
+    <h1 class="title ud_weight">注册</h1>
+    <div class="buttons">
+      <a class="button button-clear ud_color" href="#/login">登录</a>
+    </div>
+  </ion-header-bar>
+  <ion-content style="padding-top: 25px" scroll="false">
+    <div class="list">
+      <p class="item ud_padding">
+        中国(+86)
+      </p>
+    </div>
+    <div class="list">
+      <p class="item" style="display: flex;align-items: center;padding: 2px 16px">
+        <input type="text"
+               style="border: none;
+               background: transparent;flex-grow: 1;"
+               ng-model="registerInfo.mobile"
+               placeholder="请输入手机号">
+        <i class="icon ion-close-circled"
+           ng-click="ud.inputEmpty()"
+           ng-show="registerInfo.mobile"></i>
+      </p>
+    </div>
+    <button class="ud_btn" ng-click="ud.getCode()">
+      获取验证码
+    </button>
+    <p style="text-align: center;">注册即表示您同意龙门成绩<a style="color:#26C6DA;" href="./#/licenseAndService">注册协议</a>和<a style="color:#26C6DA;" href="./#/privacyPolicy">隐私政策</a></p>
+  </ion-content>
+</ion-view>

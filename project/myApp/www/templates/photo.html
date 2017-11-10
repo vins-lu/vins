@@ -1,0 +1,11 @@
+<ion-modal-view>
+  <ion-content style="background-color: #000;">
+    <h1 style="color: #fff;">拍照页</h1>
+	<input type="file" ng-if="!reuploadState" ng-model="file.files" id="fileupload" accept="image/*" multiple="multiple" ng-click="ud.selectImg($event)">
+	<input type="file" ng-if="reuploadState" ng-model="reuploadImg" id="fileupload" accept="image/*" ng-click="ud.selectImg($event)">
+	<div>{{file.files}}</div>
+    <h1 ng-click="ud.closePhoto()" style="color: #fff;">取消</h1>
+    <h1 ng-click="ud.complatePhoto()" style="color: #fff;">完成</h1>
+  </ion-content>
+
+</ion-modal-view>
