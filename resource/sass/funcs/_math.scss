@@ -1,0 +1,71 @@
+@import "./factorial";
+@import "./pow";
+@function rad ($angle) {  
+	$pi: 3.14159265359;
+  	$unit: unit($angle);  
+  	$unitless: $angle / ($angle * 0 + 1);  
+  
+  	@if $unit == "deg" {  
+    	$unitless: $unitless / 180 * $pi;  
+  	}  
+  	@return $unitless;  
+}
+
+@function sin($angle) {  
+  	$sin: 0;  
+  	$angle: rad($angle);  
+  	@for $i from 0 through 10 {  
+    	$sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / factorial(2 * $i + 1);  
+  	}  
+  	@return $sin;  
+}  
+  
+@function cos($angle) {  
+  	$cos: 0;  
+  	$angle: rad($angle);  
+  	@for $i from 0 through 10 {  
+    	$cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / factorial(2 * $i);  
+  	}  
+  	@return $cos;  
+}  
+  
+@function tan($angle) {  
+  	@return sin($angle) / cos($angle);  
+}  
+
+@function decimal ($number, $digits: 0, $mode: round) {
+	$n: 1;
+	@if type-of($number) != number {
+	    @warn '#{ $number } is not a number.';
+	    @return $number;
+	}
+	@if type-of($digits) != number {
+	    @warn '#{ $digits } is not a number.';
+	    @return $number;
+	} @else if not unitless($digits) {
+	    @warn '#{ $digits } has a unit.';
+	    @return $number;
+	}
+	@for $i from 1 through $digits {
+	    $n: $n * 10;
+	}
+	@if $mode == round {
+	    @return round($number * $n) / $n;
+	} @else if $mode == ceil {
+	    @return ceil($number * $n) / $n;
+	} @else if $mode == floor {
+	    @return floor($number * $n) / $n;
+	} @else {
+	    @warn '#{ $mode } is undefined keyword.';
+	    @return $number;
+	}
+}
+@function math-round ($number, $digits: 2) {
+    @return decimal($number, $digits);
+}
+@function math-ceil ($number, $digits: 2) {
+    @return decimal($number, $digits, ceil);
+}
+@function math-floor ($number, $digits: 2) {
+    @return decimal($number, $digits, floor);
+}

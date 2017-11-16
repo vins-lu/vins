@@ -1,0 +1,40 @@
+@charset "utf-8";
+// 生成三角形
+@mixin arrow ($direction: top, $color: black, $size: 12px) {
+    $dire: (top: "bottom", bottom: "top", left: "right", right: "left");
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    border-style: solid;
+    border-width: $size;
+    border-#{map-get($dire, $direction)}-width: $size * 0.64;
+    border-color: transparent;
+    cursor: pointer;
+    border-#{map-get($dire, $direction)}-color: $color;
+    border-#{$direction}: none;
+}
+
+// example
+// scss
+/* h2{
+    @include arrow(top, #ff0, 13px);
+} */
+// css
+/* h2 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 13px;
+  border-bottom-width: 8.32px;
+  border-color: transparent;
+  cursor: pointer;
+  border-bottom-color: #ff0;
+  border-top: none; 
+} */

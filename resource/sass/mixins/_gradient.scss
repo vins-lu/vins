@@ -1,0 +1,53 @@
+@charset "utf-8";
+@mixin gradient($type, $direction, $colorStops...) {
+    $stddir: $direction;
+    $firstPoint: nth($colorStops, 1);
+    $defaultcolor: "";
+
+    @if type-of($direction) == "string" {
+        $stddir: "to " + $stddir;
+        $stddir: unquote($stddir);
+        $direction: unquote($direction);
+    }
+    @if type-of($firstPoint) == "list" {
+        @if type-of(nth($firstPoint, 1)) == "color" {
+            $defaultcolor: nth($firstPoint, 1);
+        } @else {
+            $defaultcolor: nth($firstPoint, 2);
+        }
+    } @else{
+        $defaultcolor: $firstPoint;
+    }
+    @if $type == "radial" {
+        background-color: $defaultcolor;
+        background-image:-moz-radial-gradient($direction, $colorStops);
+        background-image:-o-radial-gradient($direction, $colorStops);
+        background-image: -webkit-radial-gradient($direction, $colorStops);
+        background-image: -ms-radial-gradient($direction, $colorStops);
+        background-image: radial-gradient($direction, $colorStops);
+    } @else if $type == "linear" {
+        background-color: $defaultcolor;
+        background-image:-moz-linear-gradient($direction, $colorStops);
+        background-image:-o-linear-gradient($direction, $colorStops);
+        background-image: -webkit-linear-gradient($direction, $colorStops);
+        background-image: -ms-linear-gradient($direction, $colorStops);
+        background-image: linear-gradient($stddir, $colorStops);
+    } @else {
+        @error "type is not exist"
+    }
+}
+
+// example
+// scss
+/* h2{
+    @include gradient("linear", top, red, #ff0);
+} */
+// css
+/* h2 {
+  background-color: red;
+  background-image: -moz-linear-gradient(0 top, 0 red, #ff0);
+  background-image: -o-linear-gradient(0 top, 0 red, #ff0);
+  background-image: -webkit-linear-gradient(0 top, 0 red, #ff0);
+  background-image: -ms-linear-gradient(0 top, 0 red, #ff0);
+  background-image: linear-gradient(0 top, 0 red, #ff0); 
+} */

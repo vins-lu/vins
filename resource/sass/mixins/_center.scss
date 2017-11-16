@@ -1,0 +1,41 @@
+@charset "utf-8";
+// 垂直居中
+@mixin center($width: null, $height: null) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @if not $width and not $height {
+        transform: translate(-50%, -50%);
+    } @else if $width and $height {
+        width: $width;
+        height: $height;
+        margin: unquote("#{-($width / 2)} #{0 0} #{-($height / 2)}");
+    } @else if not $height {
+        width: $width;
+        margin-left: -($width / 2);
+        transform: translateY(-50%);
+    } @else {
+        height: $height;
+        margin-top: -($height / 2);
+        transform: translateX(-50%);
+    }
+}
+
+// example
+// scss
+
+/* h2{
+    @include center(20px);
+} */
+
+//css
+
+/* h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  margin-left: -10px;
+  transform: translateY(-50%); 
+} */

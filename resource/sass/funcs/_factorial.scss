@@ -1,0 +1,9 @@
+@function factorial ($number) {  
+    $value: 1;  
+    @if $number > 0 {  
+        @for $i from 1 through $number {  
+            $value: $value * $i;  
+        }  
+    }  
+    @return $value;  
+}

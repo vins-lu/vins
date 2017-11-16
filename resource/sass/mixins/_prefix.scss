@@ -1,0 +1,31 @@
+@charset "utf-8";
+// 添加浏览器前缀
+@mixin prefix($prop, $val) { 
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' { 
+		#{$prefix}#{$prop}: $val; 
+	} 
+}
+@mixin border-radius($val) {
+	@include prefix(border-radius, $val);
+}
+
+@mixin transition($val) {
+	@include prefix(transition, $val);
+}
+
+@mixin box-shadow($val) {
+	@include prefix(box-shadow, $val);
+}
+
+// example
+/* h2 {
+	@include prefix(border-radius, 4px);
+} */
+// css
+/* h2 {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; 
+} */
