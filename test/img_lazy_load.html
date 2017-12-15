@@ -18,6 +18,7 @@
 		}
 
 		#con img{
+			display: inline-block;
 			width: 350px;
 			height: 350px;
             margin: 20px;
@@ -77,7 +78,7 @@
 
 
 	<script>
-		function img_lazy_load() {
+		function img_lazy() {
 			function objpos(obj){
 				var pre = obj;
 				var l = 0;
@@ -98,12 +99,13 @@
 
 			var imgs = Array.prototype.slice.call(document.getElementsByTagName('img'), 0);
 
-			window.onload = window.onscroll = function () {
+			return function () {
 				var sHeight = document.documentElement.scrollTop || document.body.scrollTop;
 				var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
 				for (var i = 0; i < imgs.length; i++) {
-					if (objpos(imgs[i]).top - sHeight < screenHeight) {
-	                    imgs[i].setAttribute("src",imgs[i].getAttribute("data-src"));
+					if (window.pageYOffset < objpos(imgs[i]).top + imgs[i].clientHeight && objpos(imgs[i]).top < screenHeight + sHeight) {
+						var dataSrc = imgs[i].getAttribute("data-src");
+	                    imgs[i].setAttribute("src", dataSrc);
 	                    imgs[i].style.display = "inline-block";
 	                    imgs.splice(i,1);
 	                    i--;
@@ -111,7 +113,11 @@
 				}
 			}
 		}
-		img_lazy_load();
+		var img_lazy_load = img_lazy();
+		document.addEventListener('DOMContentLoaded', img_lazy_load);
+		document.addEventListener('reload', img_lazy_load);
+		document.addEventListener('resize', img_lazy_load);
+		document.addEventListener('scroll', img_lazy_load);
 	</script>
 </body>
 </html>
