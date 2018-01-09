@@ -7,29 +7,20 @@
 
 //检查是否为json字符串
 function parseJson(str) {
-  if (typeof str == 'string') {
+  if (typeof str === 'string') {
     try {
       if (str.search(/^\{/) > -1 || str.search(/^\[/) > -1) {
         var obj = JSON.parse(str);
         return obj;
       } else {
-<<<<<<< HEAD
         return str;
-=======
-        return obj;
->>>>>>> 9593684734b838cce50ebcdb4bd273f3e0eaed69
       }
-
     } catch (e) {
       console.log(e);
       return false;
     }
   }
-<<<<<<< HEAD
   return str;
-=======
-  return obj;
->>>>>>> 9593684734b838cce50ebcdb4bd273f3e0eaed69
 }
 
 export default {
