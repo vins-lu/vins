@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+    <img src="http://www.yuloo.com/yuloo-images/banner01.jpg" alt="">
+    <img src="http://www.yuloo.com/yuloo-images/banner02.jpg" alt="">
+    <img src="http://www.yuloo.com/yuloo-images/banner02.jpg" alt="">
+    <img src="http://www.yuloo.com/yuloo-images/banner03.jpg" alt="">
+    <div>阻止文字内容被复制</div>
+
+    <noscript>这里添加代码被阻止的情况</noscript>
+
+    <script>
+        
+        $(document).ready(function () {
+            function prohibit (event) {
+                var e = event || window.event;
+                if (!e) {
+                    return false;
+                }
+                if (e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+                e.preventDefault && e.preventDefault();
+                e.returnValue = false;
+                return false;
+            }
+            window.onkeydown = function (e) {
+                // 阻止f12按键
+                var e = event || window.event;
+                if (e.keyCode === 123) {
+                    e.preventDefault && e.preventDefault();
+                    e.returnValue = false;
+                    return false;
+                }
+            }
+            if (typeof $.prototype.on === 'function') { //jq1.7+
+                // $(document).on('contextmenu',  prohibit);  //阻止整个页面的右键，不建议开启
+                $(document).on('contextmenu dragstart','img',  prohibit);  // 阻止图片的另存为和拖拽保存
+                $(document).on('select copy cut', prohibit);  //阻止文本复制
+            } else if (typeof $.prototype.delegate === 'function') { //jq1.7—
+                // $(document).delegate('body', 'contextmenu', prohibit);
+                $(document).delegate('img', 'contextmenu dragstart', prohibit);
+                $(document).delegate('body', 'select copy cut', prohibit);
+            }
+        })
+    </script>
+</body>
+</html>
