@@ -36,12 +36,13 @@
   
   &::after{
     position: absolute;
-    #{map-get($dire, $pos)}: 0px;
     @if $pos == 'top' or $pos == 'bottom' {
+      $y: if($pos == 'top', calc(-100% - 4px), calc(100% + 4px));
+      #{$pos}: 0px;
       left: 50%;
-      transform: translateX(-50%);
-      margin-#{map-get($dire, $pos)}: calc(100% + 4px);
+      transform: translateX(-50%) translateY($y);
     } @else if $pos == 'left' or $pos == 'right' {
+      #{map-get($dire, $pos)}: 0px;
       top: 50%;
       transform: translateY(-50%);
       margin-#{map-get($dire, $pos)}: calc(100% + 8px);
