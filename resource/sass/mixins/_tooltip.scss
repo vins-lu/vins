@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+@import './arrow';
+@mixin tooltip($pos: top, $bgcolor: #2d8cf0) {
+  $dire: (top: 'bottom', bottom: 'top', left: 'right', right: 'left');
+  @if not map-get($dire, $pos) {
+    @error "illegalArgumentException";
+  }
+  & {
+    position: relative;
+  }
+  &:hover{
+    &::before,&::after{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &::before{
+    position: absolute;
+    #{$pos}: 0px;
+    @if $pos == 'top' or $pos == 'bottom' {
+      left: 50%;
+      transform: translateX(-50%);
+      margin-#{$pos}: -8px;
+    } @else if $pos == 'left' or $pos == 'right' {
+      top: 50%;
+      transform: translateY(-50%);
+      margin-#{$pos}: -14px;
+    }
+    content: "";
+    @include arrow(#{map-get($dire, $pos)}, $bgcolor);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  &::after{
+    position: absolute;
+    #{map-get($dire, $pos)}: 0px;
+    @if $pos == 'top' or $pos == 'bottom' {
+      left: 50%;
+      transform: translateX(-50%);
+      margin-#{map-get($dire, $pos)}: calc(100% + 4px);
+    } @else if $pos == 'left' or $pos == 'right' {
+      top: 50%;
+      transform: translateY(-50%);
+      margin-#{map-get($dire, $pos)}: calc(100% + 8px);
+    }
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    content: attr(data-tiptext);
+    color: #fff;
+    font-size: 12px;
+    line-height: 2;
+    padding: 0.2em 2em;
+    border-radius: 2em;
+    background: $bgcolor;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+  } 
+}
