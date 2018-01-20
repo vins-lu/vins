@@ -16,11 +16,13 @@ function parseJson(str) {
         return str;
       }
     } catch (e) {
-      console.log(e);
-      return false;
+      throw new Error('Cannot be converted to json format.');
     }
+  } else if (typeof str == 'object') {
+    return str;
+  } else {
+    throw new Error("params is not json type");
   }
-  return str;
 }
 
 export default {
