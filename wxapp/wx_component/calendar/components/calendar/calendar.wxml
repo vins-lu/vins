@@ -1,0 +1,43 @@
+<wxs module="time">
+  function isbeforeToday (year, month, day) {
+      var date = getDate(year, month - 1, day + 1);
+      return date.getTime() < getDate().getTime();
+  }
+  module.exports = {
+    isbeforeToday: isbeforeToday
+  };
+</wxs> 
+<view class="calendar_wrap">
+  <view class='we-tab'>
+    <view class='we-tab_nav'>
+      <view class='we-tab_list {{tabType === "month" ? "active" : ""}}' data-type='month' catchtap='toggleTab'>月</view>
+      <view class='we-tab_list {{tabType === "week" ? "active" : ""}}' data-type='week' catchtap='toggleTab'>周</view>
+    </view>
+  </view>
+  <view class='calendar'>
+    <view class='calendar-dateWrap'>
+      <view class='we-arrow_left preMonth' catchtap='preToggle'></view>
+      <view class='calendar-date'>
+        <text>{{curYear}} 年 </text>
+        <text wx:if="{{tabType === 'month'}}">{{curMonth}} 月 </text>
+        <text wx:if="{{tabType === 'week'}}">第 {{curWeek}} 周</text>
+      </view>
+      <view class='we-arrow_right nextMonth' catchtap='nextToggle'></view>
+    </view>
+    <view class='calendar-weekWrap'>
+      <view class='week-list' wx:for="{{weeks}}" wx:key="">{{item}}</view>
+    </view>
+    <view class='calendar-dayWrap'>
+      <view class='dayitem' wx:if="{{emptyDays.length > 0}}" wx:for="{{emptyDays}}" wx:key="empty-{{index}}">
+        <view class='day'></view>
+      </view>
+      <view class='dayitem' wx:for="{{fillDays}}" wx:key="{{item}}">
+        <view 
+          class='day {{[checkedDay === item ? "active" : "", curDay === item ? "current" : "", time.isbeforeToday(curYear, curMonth, item) ? "pass_day" : ""]}}' 
+          data-day='{{item}}' 
+          data-index='{{index}}' 
+          catchtap='onselect'>{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>

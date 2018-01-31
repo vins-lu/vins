@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <calendar bind:select="onselect"></calendar>
+</view>
