@@ -28,7 +28,7 @@
       <view class='week-list' wx:for="{{weeks}}" wx:key="">{{item}}</view>
     </view>
     <view class='calendar-dayWrap'>
-      <view class='dayitem' wx:if="{{emptyDays.length > 0}}" wx:for="{{emptyDays}}" wx:key="empty-{{index}}">
+      <view class='dayitem' wx:if="{{emptyDays}}" wx:for="{{emptyDays}}" wx:key="empty-{{index}}">
         <view class='day'></view>
       </view>
       <view class='dayitem' wx:for="{{fillDays}}" wx:key="{{item}}">

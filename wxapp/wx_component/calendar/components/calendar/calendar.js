@@ -4,7 +4,7 @@ Component({
   data: {
     tabType: 'month',
     weeks: ['日', '一', '二', '三', '四', '五', '六'],
-    emptyDays: [],
+    emptyDays: 0,
     curYear: new Date().getFullYear(),
     curMonth: new Date().getMonth() + 1,
     curDay: new Date().getDate(),
