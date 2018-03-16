@@ -1,0 +1,29 @@
+@mixin folded-corner($background, $size,
+ $angle: 30deg) {
+position: relative;
+background: $background; /* 回退样式 */
+background:
+ linear-gradient($angle - 180deg,
+ transparent $size, $background 0);
+border-radius: .5em;
+$x: $size / sin($angle);
+$y: $size / cos($angle);
+&::before {
+ content: '';
+ position: absolute;
+ top: 0; right: 0;
+ background: linear-gradient(to left bottom,
+ transparent 50%, rgba(0,0,0,.2) 0,
+ rgba(0,0,0,.4)) 100% 0 no-repeat;
+ width: $y; height: $x;
+ transform: translateY($y - $x)
+ rotate(2*$angle - 90deg);
+ transform-origin: bottom right;
+ border-bottom-left-radius: inherit;
+ box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.2);
+}
+}
+/* 当调用时... */
+.note {
+ @include folded-corner(#58a, 2em, 40deg);
+}

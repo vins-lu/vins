@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+@mixin imageset($url, $payload...) {
+	$index: str-index($url, ".");
+
+	background-image: url($url);
+	background: -webkit-image-set(url($url) 1x, url(str-insert($url, "@2x", $index)) 2x, url(str-insert($url, "@3x", $index)) 3x) $payload;
+}
